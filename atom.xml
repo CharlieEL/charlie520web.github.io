@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://charlie520blog.github.io</id>
     <title>Gridea</title>
-    <updated>2020-05-29T14:54:47.126Z</updated>
+    <updated>2020-05-29T15:00:43.761Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://charlie520blog.github.io"/>
     <link rel="self" href="https://charlie520blog.github.io/atom.xml"/>
@@ -16,11 +16,18 @@
         <link href="https://charlie520blog.github.io/post/ti-jie-p1563-wan-ju-mi-ti/">
         </link>
         <updated>2020-05-29T14:23:45.000Z</updated>
+        <summary type="html"><![CDATA[<p><a href="https://www.luogu.com.cn/problem/P1563">回到题目</a></p>
+<p><a href="https://www.luogu.com.cn/blog/56822/solution-p1563">在洛谷blog中查看</a></p>
+<blockquote>
+<p><code>本道题目难度</code> <em>较低</em> <code>，主要运用了</code> <em>模拟</em> <code>的算法。</code></p>
+</blockquote>
+]]></summary>
         <content type="html"><![CDATA[<p><a href="https://www.luogu.com.cn/problem/P1563">回到题目</a></p>
 <p><a href="https://www.luogu.com.cn/blog/56822/solution-p1563">在洛谷blog中查看</a></p>
 <blockquote>
 <p><code>本道题目难度</code> <em>较低</em> <code>，主要运用了</code> <em>模拟</em> <code>的算法。</code></p>
 </blockquote>
+<!-- more -->
 <h2 id="思路">思路：</h2>
 <ol>
 <li>输入
@@ -123,8 +130,8 @@ int main()
 <p>按时间顺序排序</p>
 </blockquote>
 <h2 id="2020529">2020/5/29</h2>
-<p>创建blog并编写主题。</p>
-<hr>
+<h2 id="创建blog并编写主题-从洛谷-搬运题解-p1563-玩具谜题">创建blog并编写主题。<br>
+<code>从洛谷 搬运题解 P1563 【玩具谜题】</code></h2>
 <h2 id="计划">计划</h2>
 <blockquote>
 <p>优先级从上到下递减</p>
