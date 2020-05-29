@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://charlie520blog.github.io</id>
     <title>Gridea</title>
-    <updated>2020-05-29T14:22:13.113Z</updated>
+    <updated>2020-05-29T14:27:43.274Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://charlie520blog.github.io"/>
     <link rel="self" href="https://charlie520blog.github.io/atom.xml"/>
@@ -10,6 +10,102 @@
     <logo>https://charlie520blog.github.io/images/avatar.png</logo>
     <icon>https://charlie520blog.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Gridea</rights>
+    <entry>
+        <title type="html"><![CDATA[题解 P1563 【玩具谜题】]]></title>
+        <id>https://charlie520blog.github.io/post/ti-jie-p1563-wan-ju-mi-ti/</id>
+        <link href="https://charlie520blog.github.io/post/ti-jie-p1563-wan-ju-mi-ti/">
+        </link>
+        <updated>2020-05-29T14:23:45.000Z</updated>
+        <content type="html"><![CDATA[<p><a href="https://www.luogu.com.cn/blog/56822/solution-p1563">在洛谷blog中查看</a></p>
+<h3 id="本道题目难度-较低-主要运用了模拟-的算法"><code>本道题目难度</code> <em>较低</em> <code>，主要运用了</code><em>模拟</em> <code>的算法。</code></h3>
+<h2 id="思路">思路：</h2>
+<ol>
+<li>输入
+<ol>
+<li>输入人数与命令条数</li>
+<li>使用for循环输入每个人的朝向与名称</li>
+</ol>
+</li>
+<li>模拟（循环n次）
+<ol>
+<li>输入第i条指令的方向与名称</li>
+<li>判断是顺时针或逆时针
+<ol>
+<li>如果是顺时针：序号 <em><strong>--</strong></em></li>
+<li>否则是逆时针：序号 <em><strong>++</strong></em></li>
+</ol>
+</li>
+<li>判断序号是否超过限制(大于总人数或小于0)
+<ol>
+<li>如果小于0：序号加上总人数</li>
+<li>否则大于总人数：序号减少总人数</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>输出：输出序号所对应的人的名称</li>
+</ol>
+<h2 id="伪代码">伪代码：</h2>
+<pre><code class="language-cpp">cin&gt;&gt;人数&gt;&gt;命令条数;
+for(i = 0;i &lt; 人数 ; i++)
+	cin&gt;&gt;第i个人的朝向与名称;
+for(i = 0;i &lt; 命令条数 ; i++){
+   cin&gt;&gt;第i条命令的方向与步数;
+   if(第i个人朝外且命令方向朝右 || 第i个人朝内且命令方向朝左)
+  		序号-=步数;
+ 	else
+  		序号+=步数;
+   if(序号 &gt;= 人数)
+  		序号-=人数;
+   else if(序号 &lt;= -1)
+     序号 +=人数;
+}
+cout&lt;&lt;名称字符串[序号]
+return 0;
+</code></pre>
+<h2 id="看到这里你应该有思路了">看到这里你应该有思路了。</h2>
+<h2 id="先去试试吧-̄-̄ブ">先去试试吧(￣▽￣)ブ</h2>
+<h1 id=""></h1>
+<h1 id="-2"></h1>
+<h1 id="-3"></h1>
+<p>依然不懂？</p>
+<h2 id="ac代码">AC代码：</h2>
+<pre><code class="language-cpp">#include&lt;cstdio&gt;//luoguP1563 
+#include&lt;iostream&gt;
+#include&lt;cstring&gt;
+using namespace std;
+//by charlie520
+int main()
+{
+	int m,n;//m人数，n命令
+	int i,j;
+	int ans = 0;//当前命令执行完后的位置 
+	int ma,mb;//ma命令的朝向，0左1右 
+	int a[100001];//m人的朝向，0内1外 
+	string s[100001];//m人的名称
+	cin&gt;&gt;m&gt;&gt;n;
+	for(i = 0;i &lt; m;i++)
+		cin&gt;&gt;a[i]&gt;&gt;s[i];//输入mi人的朝向与名称 
+	for(i = 0;i &lt; n;i++)
+	{
+		cin&gt;&gt;ma&gt;&gt;mb;//输入i指令的朝向与个数
+		if(a[ans] == 0 &amp;&amp; ma == 0 || a[ans] == 1 &amp;&amp; ma == 1)//朝内左或朝外右 
+			ans = ans - mb;
+		else//朝外左或朝内右
+			ans = ans + mb;
+		if(ans &gt;= m)
+			ans -= m;
+		else if(ans &lt;= -1)
+			ans += m;
+		//printf(&quot;-&gt; %d\n&quot;,ans+1);//测试，可以忽略 
+	}
+	cout&lt;&lt;s[ans]; 
+ 	return 0;
+}
+</code></pre>
+<h2 id="请勿复制抄袭可以借鉴学习">请勿复制抄袭！可以借鉴学习！</h2>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[blog更新日志]]></title>
         <id>https://charlie520blog.github.io/post/blog-history/</id>

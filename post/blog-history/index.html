@@ -9,7 +9,7 @@
 <meta name="description" content="I AK IOI">
 <meta name="theme-color" content="#000">
 <title>blog更新日志 | Gridea</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1590762123247">
+<link rel="shortcut icon" href="/favicon.ico?v=1590762450569">
 <link rel="stylesheet" href="/media/css/pisces.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
 <link
@@ -211,19 +211,19 @@
     <div class="sidebar-item-box">
       <a href="/archives/">
         
-        <span class="site-item-stat-count">2</span>
+        <span class="site-item-stat-count">3</span>
         <span class="site-item-stat-name language" data-lan="article">文章</span>
       </a>
     </div>
     <div class="sidebar-item-box">
       <a href="">
-        <span class="site-item-stat-count">1</span>
+        <span class="site-item-stat-count">2</span>
         <span class="site-item-stat-name language" data-lan="category">分类</span>
       </a>
     </div>
     <div class="sidebar-item-box">
       <a href="/tags/">
-        <span class="site-item-stat-count">1</span>
+        <span class="site-item-stat-count">2</span>
         <span class="site-item-stat-name language" data-lan="tag">标签</span>
       </a>
     </div>
@@ -630,6 +630,10 @@
   </div>
   <div class="nav">
     <div class="nav-prev">
+      
+        <i class="fa fa-chevron-left"></i>
+        <a class="nav-pc-next" title="题解 P1563 【玩具谜题】" href="https://charlie520blog.github.io/post/ti-jie-p1563-wan-ju-mi-ti/">题解 P1563 【玩具谜题】</a class="nav-pc-next">
+        <a class="nav-mobile-prev" title="题解 P1563 【玩具谜题】" href="https://charlie520blog.github.io/post/ti-jie-p1563-wan-ju-mi-ti/">上一篇</a>
       
     </div>
     <div class="nav-next">
@@ -1682,6 +1686,99 @@
       <hr>
     </div>
     <div class="result" id="result">
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://charlie520blog.github.io/post/ti-jie-p1563-wan-ju-mi-ti/"" data-c="
+          &lt;p&gt;&lt;a href=&#34;https://www.luogu.com.cn/blog/56822/solution-p1563&#34;&gt;在洛谷blog中查看&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;本道题目难度-较低-主要运用了模拟-的算法&#34;&gt;&lt;code&gt;本道题目难度&lt;/code&gt; &lt;em&gt;较低&lt;/em&gt; &lt;code&gt;，主要运用了&lt;/code&gt;&lt;em&gt;模拟&lt;/em&gt; &lt;code&gt;的算法。&lt;/code&gt;&lt;/h3&gt;
+&lt;h2 id=&#34;思路&#34;&gt;思路：&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;输入
+&lt;ol&gt;
+&lt;li&gt;输入人数与命令条数&lt;/li&gt;
+&lt;li&gt;使用for循环输入每个人的朝向与名称&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;模拟（循环n次）
+&lt;ol&gt;
+&lt;li&gt;输入第i条指令的方向与名称&lt;/li&gt;
+&lt;li&gt;判断是顺时针或逆时针
+&lt;ol&gt;
+&lt;li&gt;如果是顺时针：序号 &lt;em&gt;&lt;strong&gt;--&lt;/strong&gt;&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;否则是逆时针：序号 &lt;em&gt;&lt;strong&gt;++&lt;/strong&gt;&lt;/em&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;判断序号是否超过限制(大于总人数或小于0)
+&lt;ol&gt;
+&lt;li&gt;如果小于0：序号加上总人数&lt;/li&gt;
+&lt;li&gt;否则大于总人数：序号减少总人数&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;输出：输出序号所对应的人的名称&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;伪代码&#34;&gt;伪代码：&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;cin&amp;gt;&amp;gt;人数&amp;gt;&amp;gt;命令条数;
+for(i = 0;i &amp;lt; 人数 ; i++)
+	cin&amp;gt;&amp;gt;第i个人的朝向与名称;
+for(i = 0;i &amp;lt; 命令条数 ; i++){
+   cin&amp;gt;&amp;gt;第i条命令的方向与步数;
+   if(第i个人朝外且命令方向朝右 || 第i个人朝内且命令方向朝左)
+  		序号-=步数;
+ 	else
+  		序号+=步数;
+   if(序号 &amp;gt;= 人数)
+  		序号-=人数;
+   else if(序号 &amp;lt;= -1)
+     序号 +=人数;
+}
+cout&amp;lt;&amp;lt;名称字符串[序号]
+return 0;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;看到这里你应该有思路了&#34;&gt;看到这里你应该有思路了。&lt;/h2&gt;
+&lt;h2 id=&#34;先去试试吧-̄-̄ブ&#34;&gt;先去试试吧(￣▽￣)ブ&lt;/h2&gt;
+&lt;h1 id=&#34;&#34;&gt;&lt;/h1&gt;
+&lt;h1 id=&#34;-2&#34;&gt;&lt;/h1&gt;
+&lt;h1 id=&#34;-3&#34;&gt;&lt;/h1&gt;
+&lt;p&gt;依然不懂？&lt;/p&gt;
+&lt;h2 id=&#34;ac代码&#34;&gt;AC代码：&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include&amp;lt;cstdio&amp;gt;//luoguP1563 
+#include&amp;lt;iostream&amp;gt;
+#include&amp;lt;cstring&amp;gt;
+using namespace std;
+//by charlie520
+int main()
+{
+	int m,n;//m人数，n命令
+	int i,j;
+	int ans = 0;//当前命令执行完后的位置 
+	int ma,mb;//ma命令的朝向，0左1右 
+	int a[100001];//m人的朝向，0内1外 
+	string s[100001];//m人的名称
+	cin&amp;gt;&amp;gt;m&amp;gt;&amp;gt;n;
+	for(i = 0;i &amp;lt; m;i++)
+		cin&amp;gt;&amp;gt;a[i]&amp;gt;&amp;gt;s[i];//输入mi人的朝向与名称 
+	for(i = 0;i &amp;lt; n;i++)
+	{
+		cin&amp;gt;&amp;gt;ma&amp;gt;&amp;gt;mb;//输入i指令的朝向与个数
+		if(a[ans] == 0 &amp;amp;&amp;amp; ma == 0 || a[ans] == 1 &amp;amp;&amp;amp; ma == 1)//朝内左或朝外右 
+			ans = ans - mb;
+		else//朝外左或朝内右
+			ans = ans + mb;
+		if(ans &amp;gt;= m)
+			ans -= m;
+		else if(ans &amp;lt;= -1)
+			ans += m;
+		//printf(&amp;quot;-&amp;gt; %d\n&amp;quot;,ans+1);//测试，可以忽略 
+	}
+	cout&amp;lt;&amp;lt;s[ans]; 
+ 	return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;请勿复制抄袭可以借鉴学习&#34;&gt;请勿复制抄袭！可以借鉴学习！&lt;/h2&gt;
+">题解 P1563 【玩具谜题】</a>
+      </div>
       
       <div class="item">
         <a class="result-title" style="opacity: 0;" href="https://charlie520blog.github.io/post/blog-history/"" data-c="
