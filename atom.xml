@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://charlie520blog.github.io</id>
     <title>Gridea</title>
-    <updated>2020-05-29T14:28:21.936Z</updated>
+    <updated>2020-05-29T14:36:07.551Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://charlie520blog.github.io"/>
     <link rel="self" href="https://charlie520blog.github.io/atom.xml"/>
@@ -16,8 +16,11 @@
         <link href="https://charlie520blog.github.io/post/ti-jie-p1563-wan-ju-mi-ti/">
         </link>
         <updated>2020-05-29T14:23:45.000Z</updated>
-        <content type="html"><![CDATA[<p><a href="https://www.luogu.com.cn/blog/56822/solution-p1563">在洛谷blog中查看</a></p>
-<h3 id="本道题目难度-较低-主要运用了模拟-的算法"><code>本道题目难度</code> <em>较低</em> <code>，主要运用了</code><em>模拟</em> <code>的算法。</code></h3>
+        <content type="html"><![CDATA[<p><a href="https://www.luogu.com.cn/problem/P1563">回到题目</a></p>
+<p><a href="https://www.luogu.com.cn/blog/56822/solution-p1563">在洛谷blog中查看</a></p>
+<blockquote>
+<p><code>本道题目难度</code> <em>较低</em> <code>，主要运用了</code> <em>模拟</em> <code>的算法。</code></p>
+</blockquote>
 <h2 id="思路">思路：</h2>
 <ol>
 <li>输入
@@ -63,12 +66,9 @@ for(i = 0;i &lt; 命令条数 ; i++){
 cout&lt;&lt;名称字符串[序号]
 return 0;
 </code></pre>
-<h2 id="看到这里你应该有思路了">看到这里你应该有思路了。</h2>
-<h2 id="先去试试吧-̄-̄ブ">先去试试吧(￣▽￣)ブ</h2>
-<h1 id=""></h1>
-<h1 id="-2"></h1>
-<h1 id="-3"></h1>
-<p>依然不懂？</p>
+<p>看到这里你应该有思路了。<br>
+先去试试吧(￣▽￣)ブ<br>
+依然不懂？</p>
 <h2 id="ac代码">AC代码：</h2>
 <pre><code class="language-cpp">#include&lt;cstdio&gt;//luoguP1563 
 #include&lt;iostream&gt;
@@ -103,7 +103,7 @@ int main()
  	return 0;
 }
 </code></pre>
-<h2 id="请勿复制抄袭可以借鉴学习">请勿复制抄袭！可以借鉴学习！</h2>
+<p><strong>请勿复制抄袭！可以借鉴学习！</strong></p>
 ]]></content>
     </entry>
     <entry>
