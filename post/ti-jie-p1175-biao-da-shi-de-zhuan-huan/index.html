@@ -9,7 +9,7 @@
 <meta name="description" content="I AK IOI">
 <meta name="theme-color" content="#000">
 <title>题解 P1175 【表达式的转换】 | charlieのblog</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1590802812923">
+<link rel="shortcut icon" href="/favicon.ico?v=1590803036680">
 <link rel="stylesheet" href="/media/css/gemini.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
 <link
@@ -269,10 +269,10 @@
 <li><a href="#1-for-scanf">1. for + scanf</a></li>
 <li><a href="#2-whilecin">2. while(cin)</a></li>
 <li><a href="#3-string">3. string!</a></li>
-<li><a href="#%E4%B8%AD%E7%BC%80%E8%BD%AC%E5%90%8E%E7%BC%80">中缀转后缀。</a></li>
-<li><a href="#%E8%AE%A1%E7%AE%97%E5%90%8E%E7%BC%80%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%B9%B6%E8%BE%93%E5%87%BA%E8%BF%90%E7%AE%97%E8%BF%87%E7%A8%8B">计算后缀表达式并输出运算过程</a></li>
 </ul>
 </li>
+<li><a href="#%E4%B8%AD%E7%BC%80%E8%BD%AC%E5%90%8E%E7%BC%80">中缀转后缀。</a></li>
+<li><a href="#%E8%AE%A1%E7%AE%97%E5%90%8E%E7%BC%80%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%B9%B6%E8%BE%93%E5%87%BA%E8%BF%90%E7%AE%97%E8%BF%87%E7%A8%8B">计算后缀表达式并输出运算过程</a></li>
 <li><a href="#ac-code">AC CODE</a></li>
 </ul>
 </li>
@@ -616,7 +616,7 @@ cin &gt;&gt; s1;
 </code></pre>
 </details>
 <p>直接输入字符串即可。</p>
-<h3 id="中缀转后缀">中缀转后缀。</h3>
+<h2 id="中缀转后缀">中缀转后缀。</h2>
 <p>主要使用的数据结构：<strong>栈</strong><br>
 首先创建一个函数来回复优先级，一共3种情况</p>
 <ul>
@@ -694,7 +694,7 @@ while(!st.empty()) {//全部弹出
 </code></pre>
 </details>
 <p>使用la存长度，否则会非常慢！</p>
-<h3 id="计算后缀表达式并输出运算过程">计算后缀表达式并输出运算过程</h3>
+<h2 id="计算后缀表达式并输出运算过程">计算后缀表达式并输出运算过程</h2>
 <p>计算后缀表达式也使用：<strong>栈</strong><br>
 一共有两种情况：</p>
 <ul>
@@ -1952,7 +1952,7 @@ cin &amp;gt;&amp;gt; s1;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/details&gt;
 &lt;p&gt;直接输入字符串即可。&lt;/p&gt;
-&lt;h3 id=&#34;中缀转后缀&#34;&gt;中缀转后缀。&lt;/h3&gt;
+&lt;h2 id=&#34;中缀转后缀&#34;&gt;中缀转后缀。&lt;/h2&gt;
 &lt;p&gt;主要使用的数据结构：&lt;strong&gt;栈&lt;/strong&gt;&lt;br&gt;
 首先创建一个函数来回复优先级，一共3种情况&lt;/p&gt;
 &lt;ul&gt;
@@ -2030,7 +2030,7 @@ while(!st.empty()) {//全部弹出
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/details&gt;
 &lt;p&gt;使用la存长度，否则会非常慢！&lt;/p&gt;
-&lt;h3 id=&#34;计算后缀表达式并输出运算过程&#34;&gt;计算后缀表达式并输出运算过程&lt;/h3&gt;
+&lt;h2 id=&#34;计算后缀表达式并输出运算过程&#34;&gt;计算后缀表达式并输出运算过程&lt;/h2&gt;
 &lt;p&gt;计算后缀表达式也使用：&lt;strong&gt;栈&lt;/strong&gt;&lt;br&gt;
 一共有两种情况：&lt;/p&gt;
 &lt;ul&gt;

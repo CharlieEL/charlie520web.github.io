@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://charlie520blog.github.io</id>
     <title>charlieのblog</title>
-    <updated>2020-05-30T01:40:21.075Z</updated>
+    <updated>2020-05-30T01:43:59.957Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://charlie520blog.github.io"/>
     <link rel="self" href="https://charlie520blog.github.io/atom.xml"/>
@@ -66,7 +66,7 @@ cin &gt;&gt; s1;
 </code></pre>
 </details>
 <p>直接输入字符串即可。</p>
-<h3 id="中缀转后缀">中缀转后缀。</h3>
+<h2 id="中缀转后缀">中缀转后缀。</h2>
 <p>主要使用的数据结构：<strong>栈</strong><br>
 首先创建一个函数来回复优先级，一共3种情况</p>
 <ul>
@@ -144,7 +144,7 @@ while(!st.empty()) {//全部弹出
 </code></pre>
 </details>
 <p>使用la存长度，否则会非常慢！</p>
-<h3 id="计算后缀表达式并输出运算过程">计算后缀表达式并输出运算过程</h3>
+<h2 id="计算后缀表达式并输出运算过程">计算后缀表达式并输出运算过程</h2>
 <p>计算后缀表达式也使用：<strong>栈</strong><br>
 一共有两种情况：</p>
 <ul>
