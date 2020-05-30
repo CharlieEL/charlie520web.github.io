@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://charlie520blog.github.io</id>
     <title>charlieのblog</title>
-    <updated>2020-05-30T00:58:52.393Z</updated>
+    <updated>2020-05-30T01:40:21.075Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://charlie520blog.github.io"/>
     <link rel="self" href="https://charlie520blog.github.io/atom.xml"/>
@@ -10,6 +10,280 @@
     <logo>https://charlie520blog.github.io/images/avatar.png</logo>
     <icon>https://charlie520blog.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, charlieのblog</rights>
+    <entry>
+        <title type="html"><![CDATA[题解 P1175 【表达式的转换】]]></title>
+        <id>https://charlie520blog.github.io/post/ti-jie-p1175-biao-da-shi-de-zhuan-huan/</id>
+        <link href="https://charlie520blog.github.io/post/ti-jie-p1175-biao-da-shi-de-zhuan-huan/">
+        </link>
+        <updated>2020-05-30T01:26:21.000Z</updated>
+        <summary type="html"><![CDATA[<p><a href="https://www.luogu.com.cn/problem/P1175">回到题目</a></p>
+<p><a href="https://www.luogu.com.cn/blog/56822/solution-p1175">在洛谷blog中查看</a></p>
+<p>本题基本可以分为3步：</p>
+<ul>
+<li>读入中缀表达式</li>
+<li>中缀表达式转换为后缀表达式并输出</li>
+<li>计算后缀表达式并输出过程</li>
+</ul>
+]]></summary>
+        <content type="html"><![CDATA[<p><a href="https://www.luogu.com.cn/problem/P1175">回到题目</a></p>
+<p><a href="https://www.luogu.com.cn/blog/56822/solution-p1175">在洛谷blog中查看</a></p>
+<p>本题基本可以分为3步：</p>
+<ul>
+<li>读入中缀表达式</li>
+<li>中缀表达式转换为后缀表达式并输出</li>
+<li>计算后缀表达式并输出过程</li>
+</ul>
+<!-- more -->
+<h2 id="读入中缀表达式">读入中缀表达式。</h2>
+<p>一般输入字符有三种方法：</p>
+<h3 id="1-for-scanf">1. for + scanf</h3>
+<p>举个例子：</p>
+<details>
+<summary><mark><font color=darkred>点击查看代码</font></mark></summary>
+<pre><code class="language-cpp">for(int i = 0;i &lt; n;i++)
+	scanf(&quot;%c&quot;,x);
+</code></pre>
+</details>
+<p><strong>显然此题我们不知道n是多少，所以pass。</strong></p>
+<h3 id="2-whilecin">2. while(cin)</h3>
+<p>举个例子：</p>
+<details>
+<summary><mark><font color=darkred>点击查看代码</font></mark></summary>
+<pre><code class="language-cpp">while(cin &gt;&gt; x) {
+	//做一些事情
+}
+</code></pre>
+</details>
+<p><strong>然而这样太麻烦了，而且只是读入而已，不需要边输入边做事，果断pass。</strong></p>
+<h3 id="3-string">3. string!</h3>
+<p>聪慧的我发现了表达式之间没有空格。<br>
+<s>(大佬早就看见了)</s><br>
+于是，第三种方法脱险而出：string!</p>
+<details>
+<summary><mark><font color=darkred>点击查看代码</font></mark></summary>
+<pre><code class="language-cpp">string s1;
+cin &gt;&gt; s1;
+</code></pre>
+</details>
+<p>直接输入字符串即可。</p>
+<h3 id="中缀转后缀">中缀转后缀。</h3>
+<p>主要使用的数据结构：<strong>栈</strong><br>
+首先创建一个函数来回复优先级，一共3种情况</p>
+<ul>
+<li>+,-优先级最低，用1表示</li>
+<li>其次是×,/，用2表示</li>
+<li>^优先级最高，用3表示</li>
+</ul>
+<p>代码：</p>
+<details>
+<summary><mark><font color=darkred>点击查看代码</font></mark></summary>
+<pre><code class="language-cpp">int p(char ch) {
+	if(ch == '+' || ch == '-') return 1;
+	if(ch == '*' || ch == '/') return 2;
+	if(ch == '^') return 3;
+	else return 0;//此处可不写，防止报错
+}
+</code></pre>
+</details>
+<p>表达式的符号共有4种类型：</p>
+<ul>
+<li>数字<br>
+直接放入后缀表达式</li>
+<li>左括号<br>
+直接压入栈</li>
+<li>右括号<br>
+while(栈顶不为左括号) {<br>
+栈顶元素放入后缀表达式；<br>
+弹出栈顶元素；<br>
+}<br>
+弹出栈顶元素；</li>
+<li>为普通运算符（+,-,×,/,^）<br>
+while(栈不空&amp;&amp;栈顶运算符优先级比该运算符优先级高） {<br>
+栈顶元素放入后缀表达式；<br>
+弹出栈顶元素；<br>
+}<br>
+将该运算符压入栈；</li>
+</ul>
+<p>最后将栈内剩下的所有元素放入后缀表达式并弹出<br>
+代码：</p>
+<details>
+<summary><mark><font color=darkred>点击查看代码</font></mark></summary>
+<pre><code class="language-cpp">for(int i = 0;i &lt; len;i++) {
+	if(s1[i] &gt;= '0' &amp;&amp; s1[i] &lt;= '9')//数字
+		s2 += s1[i];
+	else if(s1[i] == '(')//左括号
+		st.push('(');
+	else if(s1[i] == ')') {//右括号
+		while(st.top() != '(') {
+			s2 += st.top();
+			st.pop();
+		}
+		st.pop();
+	}
+	else {//普通运算符
+	while(!st.empty() &amp;&amp; p(st.top()) &gt;= p(s1[i])) {
+			s2 += st.top();
+			st.pop();
+		}
+		st.push(s1[i]);
+	}
+}
+while(!st.empty()) {//全部弹出
+	s2 += st.top();
+	st.pop();
+}
+</code></pre>
+</details>
+<p><strong>切记！输出后缀表达式！用空格隔开！</strong></p>
+<details>
+<summary><mark><font color=darkred>点击查看代码</font></mark></summary>
+<pre><code class="language-cpp">int la = s2.length();
+	for(int i = 0;i &lt; la;i++)
+		cout &lt;&lt; s2[i] &lt;&lt; &quot; &quot;;
+	cout &lt;&lt; endl;//末尾一定有换行！
+</code></pre>
+</details>
+<p>使用la存长度，否则会非常慢！</p>
+<h3 id="计算后缀表达式并输出运算过程">计算后缀表达式并输出运算过程</h3>
+<p>计算后缀表达式也使用：<strong>栈</strong><br>
+一共有两种情况：</p>
+<ul>
+<li>数字<br>
+直接压入栈。（注意要转为int类型哦！）</li>
+<li>运算符<br>
+取出栈顶两元素进行计算，并压入栈中<br>
+首先我们建立一个函数来进行两数的计算<br>
+为+ , - , × , /<br>
+return a （+ , - , × , /） b；<br>
+否则为^,使用(int)pow(a, b);进行计算，需要改int。<br>
+代码：</li>
+</ul>
+<details>
+<summary><mark><font color=darkred>点击查看代码</font></mark></summary>
+<pre><code class="language-cpp">int numans(int a,char c,int b) {
+	if(c == '+') return a + b;
+	if(c == '-') return a - b;
+	if(c == '*') return a * b;
+	if(c == '/') return a / b;
+	if(c == '^') return (int)pow(a, b);
+} 
+</code></pre>
+</details>
+<p>然后将运算过程输出出来。</p>
+<ul>
+<li>输出所有栈内元素</li>
+<li>输出还未计算的后缀表达式</li>
+</ul>
+<p>代码：</p>
+<details>
+<summary><mark><font color=darkred>点击查看代码</font></mark></summary>
+<pre><code class="language-cpp">for(int i = 0;i &lt; la;i++) {
+		if(s2[i] &gt;= '0' &amp;&amp; s2[i] &lt;= '9') { 
+			st2.push_back(s2[i] - '0');
+		}
+		else {
+			int a, b;
+			a = st2.back();
+			st2.pop_back();
+			b = st2.back();
+			st2.pop_back();
+			st2.push_back(numans(b,s2[i],a));
+			for (list&lt;int&gt;::iterator it = st2.begin(); it != st2.end(); ++it)
+                cout &lt;&lt; *it &lt;&lt; &quot; &quot;;
+            
+            for (int j = i + 1; j &lt; la; j ++)
+                cout &lt;&lt; s2[j] &lt;&lt; &quot; &quot;;
+			cout &lt;&lt; endl;
+		} 
+	} 
+</code></pre>
+</details>
+<p>然后是最<s>难</s>的：</p>
+<pre><code class="language-cpp">return 0;
+}
+</code></pre>
+<p>这样，你就可以AC这道题了！</p>
+<h2 id="ac-code">AC CODE</h2>
+<details>
+<summary><mark><font color=darkred>点击查看AC代码</font></mark></summary>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+string s1,s2;
+stack&lt;char&gt; st;
+list&lt;int&gt; st2;
+int p(char ch) {
+	if(ch == '+' || ch == '-') return 1;
+	if(ch == '*' || ch == '/') return 2;
+	if(ch == '^') return 3;
+	else return 0;
+}
+int numans(int a,char c,int b) {
+	if(c == '+') return a + b;
+	if(c == '-') return a - b;
+	if(c == '*') return a * b;
+	if(c == '/') return a / b;
+	if(c == '^') return (int)pow(a, b);
+} 
+int main() {
+	cin &gt;&gt; s1;
+	int len = s1.length();
+	for(int i = 0;i &lt; len;i++) {
+		if(s1[i] &gt;= '0' &amp;&amp; s1[i] &lt;= '9')
+			s2 += s1[i];
+		else if(s1[i] == '(')
+			st.push('(');
+		else if(s1[i] == ')') {
+			while(st.top() != '(') {
+				s2 += st.top();
+				st.pop();
+			}
+			st.pop();
+		}
+		else {
+			while(!st.empty() &amp;&amp; p(st.top()) &gt;= p(s1[i])) {
+				s2 += st.top();
+				st.pop();
+			}
+			st.push(s1[i]);
+		}
+	}
+	while(!st.empty()) {
+		s2 += st.top();
+		st.pop();
+	}
+	int la = s2.length();
+	for(int i = 0;i &lt; la;i++)
+		cout &lt;&lt; s2[i] &lt;&lt; &quot; &quot;;
+	cout &lt;&lt; endl;
+	
+	for(int i = 0;i &lt; la;i++) {
+		if(s2[i] &gt;= '0' &amp;&amp; s2[i] &lt;= '9') { 
+			st2.push_back(s2[i] - '0');
+		}
+		else {
+			int a, b;
+			a = st2.back();
+			st2.pop_back();
+			b = st2.back();
+			st2.pop_back();
+			st2.push_back(numans(b,s2[i],a));
+			for (list&lt;int&gt;::iterator it = st2.begin(); it != st2.end(); ++it)
+                cout &lt;&lt; *it &lt;&lt; &quot; &quot;;
+            
+            for (int j = i + 1; j &lt; la; j ++)
+                cout &lt;&lt; s2[j] &lt;&lt; &quot; &quot;;
+			cout &lt;&lt; endl;
+		} 
+	} 
+	return 0;
+}
+
+
+</code></pre>
+</details>
+<p><strong>请勿复制黏贴，可以借鉴学习。</strong></p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[题解 P1563 【玩具谜题】]]></title>
         <id>https://charlie520blog.github.io/post/ti-jie-p1563-wan-ju-mi-ti/</id>

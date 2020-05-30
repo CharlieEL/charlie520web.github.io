@@ -9,14 +9,14 @@
 <meta name="description" content="I AK IOI">
 <meta name="theme-color" content="#000">
 <title>charlieのblog</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1590800320540">
+<link rel="shortcut icon" href="/favicon.ico?v=1590802812923">
 <link rel="stylesheet" href="/media/css/gemini.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
 <link
   href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Rosario:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext"
   rel="stylesheet" type="text/css">
 
-<link href="/media/hljs/styles/vs.css"
+<link href="/media/hljs/styles/monokai-sublime.css"
   rel="stylesheet">
 
 <link rel="stylesheet" href="/styles/main.css">
@@ -191,7 +191,7 @@
     <div class="sidebar-item-box">
       <a href="/archives/">
         
-        <span class="site-item-stat-count">3</span>
+        <span class="site-item-stat-count">4</span>
         <span class="site-item-stat-name language" data-lan="article">文章</span>
       </a>
     </div>
@@ -262,7 +262,7 @@
   <div class="archive-timeline-box">
     <div class="archive-timeline-title">
       
-        <h2 class="language" data-lan="archives" data-count="3">非常好！目前共计3篇日志，继续努力！</h2>
+        <h2 class="language" data-lan="archives" data-count="4">非常好！目前共计4篇日志，继续努力！</h2>
       
     </div>
     
@@ -272,6 +272,19 @@
           <h2 class="tag-year">2020</h2>
         </div>    
         
+      
+      <a href="https://charlie520blog.github.io/post/ti-jie-p1175-biao-da-shi-de-zhuan-huan/">
+        <div class="motion-warpper tag-archive-node">
+          <div class="tag-node">
+            <h1>
+              05-30
+              <small>题解 P1175 【表达式的转换】</small>
+            </h1>
+          </div>  
+      </div>
+      </a>
+    
+      
       
       <a href="https://charlie520blog.github.io/post/ti-jie-p1563-wan-ju-mi-ti/">
         <div class="motion-warpper tag-archive-node">
@@ -1078,6 +1091,268 @@
       <hr>
     </div>
     <div class="result" id="result">
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://charlie520blog.github.io/post/ti-jie-p1175-biao-da-shi-de-zhuan-huan/"" data-c="
+          &lt;p&gt;&lt;a href=&#34;https://www.luogu.com.cn/problem/P1175&#34;&gt;回到题目&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.luogu.com.cn/blog/56822/solution-p1175&#34;&gt;在洛谷blog中查看&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;本题基本可以分为3步：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;读入中缀表达式&lt;/li&gt;
+&lt;li&gt;中缀表达式转换为后缀表达式并输出&lt;/li&gt;
+&lt;li&gt;计算后缀表达式并输出过程&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- more --&gt;
+&lt;h2 id=&#34;读入中缀表达式&#34;&gt;读入中缀表达式。&lt;/h2&gt;
+&lt;p&gt;一般输入字符有三种方法：&lt;/p&gt;
+&lt;h3 id=&#34;1-for-scanf&#34;&gt;1. for + scanf&lt;/h3&gt;
+&lt;p&gt;举个例子：&lt;/p&gt;
+&lt;details&gt;
+&lt;summary&gt;&lt;mark&gt;&lt;font color=darkred&gt;点击查看代码&lt;/font&gt;&lt;/mark&gt;&lt;/summary&gt;
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;for(int i = 0;i &amp;lt; n;i++)
+	scanf(&amp;quot;%c&amp;quot;,x);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/details&gt;
+&lt;p&gt;&lt;strong&gt;显然此题我们不知道n是多少，所以pass。&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;2-whilecin&#34;&gt;2. while(cin)&lt;/h3&gt;
+&lt;p&gt;举个例子：&lt;/p&gt;
+&lt;details&gt;
+&lt;summary&gt;&lt;mark&gt;&lt;font color=darkred&gt;点击查看代码&lt;/font&gt;&lt;/mark&gt;&lt;/summary&gt;
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;while(cin &amp;gt;&amp;gt; x) {
+	//做一些事情
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/details&gt;
+&lt;p&gt;&lt;strong&gt;然而这样太麻烦了，而且只是读入而已，不需要边输入边做事，果断pass。&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;3-string&#34;&gt;3. string!&lt;/h3&gt;
+&lt;p&gt;聪慧的我发现了表达式之间没有空格。&lt;br&gt;
+&lt;s&gt;(大佬早就看见了)&lt;/s&gt;&lt;br&gt;
+于是，第三种方法脱险而出：string!&lt;/p&gt;
+&lt;details&gt;
+&lt;summary&gt;&lt;mark&gt;&lt;font color=darkred&gt;点击查看代码&lt;/font&gt;&lt;/mark&gt;&lt;/summary&gt;
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;string s1;
+cin &amp;gt;&amp;gt; s1;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/details&gt;
+&lt;p&gt;直接输入字符串即可。&lt;/p&gt;
+&lt;h3 id=&#34;中缀转后缀&#34;&gt;中缀转后缀。&lt;/h3&gt;
+&lt;p&gt;主要使用的数据结构：&lt;strong&gt;栈&lt;/strong&gt;&lt;br&gt;
+首先创建一个函数来回复优先级，一共3种情况&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;+,-优先级最低，用1表示&lt;/li&gt;
+&lt;li&gt;其次是×,/，用2表示&lt;/li&gt;
+&lt;li&gt;^优先级最高，用3表示&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;代码：&lt;/p&gt;
+&lt;details&gt;
+&lt;summary&gt;&lt;mark&gt;&lt;font color=darkred&gt;点击查看代码&lt;/font&gt;&lt;/mark&gt;&lt;/summary&gt;
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;int p(char ch) {
+	if(ch == &#39;+&#39; || ch == &#39;-&#39;) return 1;
+	if(ch == &#39;*&#39; || ch == &#39;/&#39;) return 2;
+	if(ch == &#39;^&#39;) return 3;
+	else return 0;//此处可不写，防止报错
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/details&gt;
+&lt;p&gt;表达式的符号共有4种类型：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;数字&lt;br&gt;
+直接放入后缀表达式&lt;/li&gt;
+&lt;li&gt;左括号&lt;br&gt;
+直接压入栈&lt;/li&gt;
+&lt;li&gt;右括号&lt;br&gt;
+while(栈顶不为左括号) {&lt;br&gt;
+栈顶元素放入后缀表达式；&lt;br&gt;
+弹出栈顶元素；&lt;br&gt;
+}&lt;br&gt;
+弹出栈顶元素；&lt;/li&gt;
+&lt;li&gt;为普通运算符（+,-,×,/,^）&lt;br&gt;
+while(栈不空&amp;amp;&amp;amp;栈顶运算符优先级比该运算符优先级高） {&lt;br&gt;
+栈顶元素放入后缀表达式；&lt;br&gt;
+弹出栈顶元素；&lt;br&gt;
+}&lt;br&gt;
+将该运算符压入栈；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;最后将栈内剩下的所有元素放入后缀表达式并弹出&lt;br&gt;
+代码：&lt;/p&gt;
+&lt;details&gt;
+&lt;summary&gt;&lt;mark&gt;&lt;font color=darkred&gt;点击查看代码&lt;/font&gt;&lt;/mark&gt;&lt;/summary&gt;
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;for(int i = 0;i &amp;lt; len;i++) {
+	if(s1[i] &amp;gt;= &#39;0&#39; &amp;amp;&amp;amp; s1[i] &amp;lt;= &#39;9&#39;)//数字
+		s2 += s1[i];
+	else if(s1[i] == &#39;(&#39;)//左括号
+		st.push(&#39;(&#39;);
+	else if(s1[i] == &#39;)&#39;) {//右括号
+		while(st.top() != &#39;(&#39;) {
+			s2 += st.top();
+			st.pop();
+		}
+		st.pop();
+	}
+	else {//普通运算符
+	while(!st.empty() &amp;amp;&amp;amp; p(st.top()) &amp;gt;= p(s1[i])) {
+			s2 += st.top();
+			st.pop();
+		}
+		st.push(s1[i]);
+	}
+}
+while(!st.empty()) {//全部弹出
+	s2 += st.top();
+	st.pop();
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/details&gt;
+&lt;p&gt;&lt;strong&gt;切记！输出后缀表达式！用空格隔开！&lt;/strong&gt;&lt;/p&gt;
+&lt;details&gt;
+&lt;summary&gt;&lt;mark&gt;&lt;font color=darkred&gt;点击查看代码&lt;/font&gt;&lt;/mark&gt;&lt;/summary&gt;
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;int la = s2.length();
+	for(int i = 0;i &amp;lt; la;i++)
+		cout &amp;lt;&amp;lt; s2[i] &amp;lt;&amp;lt; &amp;quot; &amp;quot;;
+	cout &amp;lt;&amp;lt; endl;//末尾一定有换行！
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/details&gt;
+&lt;p&gt;使用la存长度，否则会非常慢！&lt;/p&gt;
+&lt;h3 id=&#34;计算后缀表达式并输出运算过程&#34;&gt;计算后缀表达式并输出运算过程&lt;/h3&gt;
+&lt;p&gt;计算后缀表达式也使用：&lt;strong&gt;栈&lt;/strong&gt;&lt;br&gt;
+一共有两种情况：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;数字&lt;br&gt;
+直接压入栈。（注意要转为int类型哦！）&lt;/li&gt;
+&lt;li&gt;运算符&lt;br&gt;
+取出栈顶两元素进行计算，并压入栈中&lt;br&gt;
+首先我们建立一个函数来进行两数的计算&lt;br&gt;
+为+ , - , × , /&lt;br&gt;
+return a （+ , - , × , /） b；&lt;br&gt;
+否则为^,使用(int)pow(a, b);进行计算，需要改int。&lt;br&gt;
+代码：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;details&gt;
+&lt;summary&gt;&lt;mark&gt;&lt;font color=darkred&gt;点击查看代码&lt;/font&gt;&lt;/mark&gt;&lt;/summary&gt;
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;int numans(int a,char c,int b) {
+	if(c == &#39;+&#39;) return a + b;
+	if(c == &#39;-&#39;) return a - b;
+	if(c == &#39;*&#39;) return a * b;
+	if(c == &#39;/&#39;) return a / b;
+	if(c == &#39;^&#39;) return (int)pow(a, b);
+} 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/details&gt;
+&lt;p&gt;然后将运算过程输出出来。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;输出所有栈内元素&lt;/li&gt;
+&lt;li&gt;输出还未计算的后缀表达式&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;代码：&lt;/p&gt;
+&lt;details&gt;
+&lt;summary&gt;&lt;mark&gt;&lt;font color=darkred&gt;点击查看代码&lt;/font&gt;&lt;/mark&gt;&lt;/summary&gt;
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;for(int i = 0;i &amp;lt; la;i++) {
+		if(s2[i] &amp;gt;= &#39;0&#39; &amp;amp;&amp;amp; s2[i] &amp;lt;= &#39;9&#39;) { 
+			st2.push_back(s2[i] - &#39;0&#39;);
+		}
+		else {
+			int a, b;
+			a = st2.back();
+			st2.pop_back();
+			b = st2.back();
+			st2.pop_back();
+			st2.push_back(numans(b,s2[i],a));
+			for (list&amp;lt;int&amp;gt;::iterator it = st2.begin(); it != st2.end(); ++it)
+                cout &amp;lt;&amp;lt; *it &amp;lt;&amp;lt; &amp;quot; &amp;quot;;
+            
+            for (int j = i + 1; j &amp;lt; la; j ++)
+                cout &amp;lt;&amp;lt; s2[j] &amp;lt;&amp;lt; &amp;quot; &amp;quot;;
+			cout &amp;lt;&amp;lt; endl;
+		} 
+	} 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/details&gt;
+&lt;p&gt;然后是最&lt;s&gt;难&lt;/s&gt;的：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;这样，你就可以AC这道题了！&lt;/p&gt;
+&lt;h2 id=&#34;ac-code&#34;&gt;AC CODE&lt;/h2&gt;
+&lt;details&gt;
+&lt;summary&gt;&lt;mark&gt;&lt;font color=darkred&gt;点击查看AC代码&lt;/font&gt;&lt;/mark&gt;&lt;/summary&gt;
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include&amp;lt;bits/stdc++.h&amp;gt;
+using namespace std;
+string s1,s2;
+stack&amp;lt;char&amp;gt; st;
+list&amp;lt;int&amp;gt; st2;
+int p(char ch) {
+	if(ch == &#39;+&#39; || ch == &#39;-&#39;) return 1;
+	if(ch == &#39;*&#39; || ch == &#39;/&#39;) return 2;
+	if(ch == &#39;^&#39;) return 3;
+	else return 0;
+}
+int numans(int a,char c,int b) {
+	if(c == &#39;+&#39;) return a + b;
+	if(c == &#39;-&#39;) return a - b;
+	if(c == &#39;*&#39;) return a * b;
+	if(c == &#39;/&#39;) return a / b;
+	if(c == &#39;^&#39;) return (int)pow(a, b);
+} 
+int main() {
+	cin &amp;gt;&amp;gt; s1;
+	int len = s1.length();
+	for(int i = 0;i &amp;lt; len;i++) {
+		if(s1[i] &amp;gt;= &#39;0&#39; &amp;amp;&amp;amp; s1[i] &amp;lt;= &#39;9&#39;)
+			s2 += s1[i];
+		else if(s1[i] == &#39;(&#39;)
+			st.push(&#39;(&#39;);
+		else if(s1[i] == &#39;)&#39;) {
+			while(st.top() != &#39;(&#39;) {
+				s2 += st.top();
+				st.pop();
+			}
+			st.pop();
+		}
+		else {
+			while(!st.empty() &amp;amp;&amp;amp; p(st.top()) &amp;gt;= p(s1[i])) {
+				s2 += st.top();
+				st.pop();
+			}
+			st.push(s1[i]);
+		}
+	}
+	while(!st.empty()) {
+		s2 += st.top();
+		st.pop();
+	}
+	int la = s2.length();
+	for(int i = 0;i &amp;lt; la;i++)
+		cout &amp;lt;&amp;lt; s2[i] &amp;lt;&amp;lt; &amp;quot; &amp;quot;;
+	cout &amp;lt;&amp;lt; endl;
+	
+	for(int i = 0;i &amp;lt; la;i++) {
+		if(s2[i] &amp;gt;= &#39;0&#39; &amp;amp;&amp;amp; s2[i] &amp;lt;= &#39;9&#39;) { 
+			st2.push_back(s2[i] - &#39;0&#39;);
+		}
+		else {
+			int a, b;
+			a = st2.back();
+			st2.pop_back();
+			b = st2.back();
+			st2.pop_back();
+			st2.push_back(numans(b,s2[i],a));
+			for (list&amp;lt;int&amp;gt;::iterator it = st2.begin(); it != st2.end(); ++it)
+                cout &amp;lt;&amp;lt; *it &amp;lt;&amp;lt; &amp;quot; &amp;quot;;
+            
+            for (int j = i + 1; j &amp;lt; la; j ++)
+                cout &amp;lt;&amp;lt; s2[j] &amp;lt;&amp;lt; &amp;quot; &amp;quot;;
+			cout &amp;lt;&amp;lt; endl;
+		} 
+	} 
+	return 0;
+}
+
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/details&gt;
+&lt;p&gt;&lt;strong&gt;请勿复制黏贴，可以借鉴学习。&lt;/strong&gt;&lt;/p&gt;
+">题解 P1175 【表达式的转换】</a>
+      </div>
       
       <div class="item">
         <a class="result-title" style="opacity: 0;" href="https://charlie520blog.github.io/post/ti-jie-p1563-wan-ju-mi-ti/"" data-c="
