@@ -1,46 +1,46 @@
-A Dark Room
+小黑屋
 ===========
-> "awake. head throbbing. vision blurry. come light the fire."
+> "醒着。头抽搐。视力模糊。来生火吧。"
 
-a minimalist text adventure game for your browser
+为您的浏览器提供一个极简的文本冒险游戏
 
-[Click to play](http://adarkroom.doublespeakgames.com)
+[点击这里进行游戏](https://charlie520web.github.io/darkroom/)
 
 <table>
-<tr><th colspan=4>Available Languages</tr>
+<tr><th colspan=4>可用的语言</tr>
 <tr>
-	<td><a href="http://adarkroom.doublespeakgames.com/?lang=zh_cn">Chinese (Simplified)</a></td>
-	<td><a href="http://adarkroom.doublespeakgames.com/?lang=zh_tw">Chinese (Traditional)</a></td>
-	<td><a href="http://adarkroom.doublespeakgames.com/?lang=en">English</a></td>
-	<td><a href="http://adarkroom.doublespeakgames.com/?lang=fr">French</a></td>
+	<td><a href="https://charlie520web.github.io/darkroom/?lang=zh_cn">简体中文</a></td>
+	<td><a href="https://charlie520web.github.io/darkroom/?lang=zh_tw">繁体中文</a></td>
+	<td><a href="https://charlie520web.github.io/darkroom/?lang=en">English</a></td>
+	<td><a href="https://charlie520web.github.io/darkroom/?lang=fr">French</a></td>
 </tr><tr>
-	<td><a href="http://adarkroom.doublespeakgames.com/?lang=de">German</a></td>
-	<td><a href="http://adarkroom.doublespeakgames.com/?lang=el">Greek</a></td>
-	<td><a href="http://adarkroom.doublespeakgames.com/?lang=id">Indonesian</a></td>
-	<td><a href="http://adarkroom.doublespeakgames.com/?lang=it">Italian</a></td>
+	<td><a href="https://charlie520web.github.io/darkroom/?lang=de">German</a></td>
+	<td><a href="https://charlie520web.github.io/darkroom/?lang=el">Greek</a></td>
+	<td><a href="https://charlie520web.github.io/darkroom/?lang=id">Indonesian</a></td>
+	<td><a href="https://charlie520web.github.io/darkroom/?lang=it">Italian</a></td>
 </tr><tr>
-	<td><a href="http://adarkroom.doublespeakgames.com/?lang=ja">Japanese</a></td>
-	<td><a href="http://adarkroom.doublespeakgames.com/?lang=ko">Korean</a></td>
-	<td><a href="http://adarkroom.doublespeakgames.com/?lang=nb">Norwegian</a></td>
-	<td><a href="http://adarkroom.doublespeakgames.com/?lang=pl">Polish</a></td>
+	<td><a href="https://charlie520web.github.io/darkroom/?lang=ja">Japanese</a></td>
+	<td><a href="https://charlie520web.github.io/darkroom/?lang=ko">Korean</a></td>
+	<td><a href="https://charlie520web.github.io/darkroom/?lang=nb">Norwegian</a></td>
+	<td><a href="https://charlie520web.github.io/darkroom/?lang=pl">Polish</a></td>
 </tr><tr>
-	<td><a href="http://adarkroom.doublespeakgames.com/?lang=pt">Portuguese</a></td>
-	<td><a href="http://adarkroom.doublespeakgames.com/?lang=pt_br">Portuguese (Brazil)</a></td>
-	<td><a href="http://adarkroom.doublespeakgames.com/?lang=ru">Russian</a></td>
-	<td><a href="http://adarkroom.doublespeakgames.com/?lang=es">Spanish</a></td>
+	<td><a href="https://charlie520web.github.io/darkroom/?lang=pt">Portuguese</a></td>
+	<td><a href="https://charlie520web.github.io/darkroom/?lang=pt_br">Portuguese (Brazil)</a></td>
+	<td><a href="https://charlie520web.github.io/darkroom/?lang=ru">Russian</a></td>
+	<td><a href="https://charlie520web.github.io/darkroom/?lang=es">Spanish</a></td>
 </tr><tr>
-	<td><a href="http://adarkroom.doublespeakgames.com/?lang=sv">Swedish</a></td>
-	<td><a href="http://adarkroom.doublespeakgames.com/?lang=th">Thai</a></td>
-	<td><a href="http://adarkroom.doublespeakgames.com/?lang=tr">Turkish</a></td>
-	<td><a href="http://adarkroom.doublespeakgames.com/?lang=uk">Ukrainian</a></td>
+	<td><a href="https://charlie520web.github.io/darkroom/?lang=sv">Swedish</a></td>
+	<td><a href="https://charlie520web.github.io/darkroom/?lang=th">Thai</a></td>
+	<td><a href="https://charlie520web.github.io/darkroom/?lang=tr">Turkish</a></td>
+	<td><a href="https://charlie520web.github.io/darkroom/?lang=uk">Ukrainian</a></td>
 </tr><tr>
-	<td><a href="http://adarkroom.doublespeakgames.com/?lang=vi">Vietnamese</a></td>
-	<td><a href="http://adarkroom.doublespeakgames.com/?lang=lt_LT">Lithuanian</a></td>
-	<td><a href="http://adarkroom.doublespeakgames.com/?lang=gl">Galician</a></td>
+	<td><a href="https://charlie520web.github.io/darkroom/?lang=vi">Vietnamese</a></td>
+	<td><a href="https://charlie520web.github.io/darkroom/?lang=lt_LT">Lithuanian</a></td>
+	<td><a href="https://charlie520web.github.io/darkroom/?lang=gl">Galician</a></td>
 </tr>
 </table>
 
-or play the latest on [GitHub](http://doublespeakgames.github.io/adarkroom)
+官方下载区：
 
 <a href="https://itunes.apple.com/us/app/a-dark-room/id736683061"><img src="http://i.imgur.com/DMdnDYq.png" height="50"></a>
 <a href="https://play.google.com/store/apps/details?id=com.yourcompany.adarkroom"><img src="http://i.imgur.com/bLWWj4r.png" height="50"></a>
