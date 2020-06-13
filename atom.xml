@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://charlie520web.github.io</id>
     <title>charlieのblog</title>
-    <updated>2020-06-12T12:08:51.277Z</updated>
+    <updated>2020-06-13T12:11:45.880Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://charlie520web.github.io"/>
     <link rel="self" href="https://charlie520web.github.io/atom.xml"/>
@@ -432,7 +432,7 @@ int main()
         <id>https://charlie520web.github.io/post/about/</id>
         <link href="https://charlie520web.github.io/post/about/">
         </link>
-        <updated>2019-01-25T11:09:48.000Z</updated>
+        <updated>1899-11-29T16:00:00.000Z</updated>
         <content type="html"><![CDATA[<blockquote>
 <p>欢迎来到我的小站呀，很高兴遇见你！🤝</p>
 </blockquote>
