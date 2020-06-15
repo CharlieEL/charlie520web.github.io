@@ -1,59 +1,423 @@
-<!DOCTYPE html>
-<!--
-	Identity by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html><head>
-		<title>RUI_ER</title>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-		<link rel="stylesheet" href="assets/css/main.css">
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		<meta name="yandex-verification" content="713967a5b89a998f">
-	</head>
-	<body class="">
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="csrf-token" content="1592141003:HMOxFf/XEOP/bnA/9hnJG0XNedx1e8T+Y3J5ZD6xJ0k=">
+    <title>洛谷在线 IDE</title>
+    <link rel="stylesheet" href="//cdn.luogu.com.cn/ide/luogu-ide.css?ver=20200320-1">
+    <style>
+        html, body, .ide-wrapper {
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+<style type="text/css" media="screen" class="monaco-colors">.monaco-editor, .monaco-editor-background, .monaco-editor .inputarea.ime-input { background-color: #fffffe; }
+.monaco-editor, .monaco-editor .inputarea.ime-input { color: #000000; }
+.monaco-editor .margin { background-color: #fffffe; }
+.monaco-editor .rangeHighlight { background-color: rgba(253, 255, 0, 0.2); }
+.vs-whitespace { color: rgba(51, 51, 51, 0.2) !important; }
+.monaco-editor .line-numbers { color: #237893; }
+.monaco-editor .current-line ~ .line-numbers { color: #0b216f; }
+.monaco-editor .view-overlays .current-line { border: 2px solid #eeeeee; }
+.monaco-editor .margin-view-overlays .current-line-margin { border: 2px solid #eeeeee; }
+.monaco-editor .lines-content .cigr { box-shadow: 1px 0 0 0 #d3d3d3 inset; }
+.monaco-editor .lines-content .cigra { box-shadow: 1px 0 0 0 #939393 inset; }
+.monaco-editor .minimap-slider, .monaco-editor .minimap-slider .minimap-slider-horizontal { background: rgba(100, 100, 100, 0.2); }
+.monaco-editor .minimap-slider:hover, .monaco-editor .minimap-slider:hover .minimap-slider-horizontal { background: rgba(100, 100, 100, 0.35); }
+.monaco-editor .minimap-slider.active, .monaco-editor .minimap-slider.active .minimap-slider-horizontal { background: rgba(0, 0, 0, 0.3); }
+.monaco-editor .minimap-shadow-visible { box-shadow: #dddddd -6px 0 6px -6px inset; }
+.monaco-editor .view-ruler { box-shadow: 1px 0 0 0 #d3d3d3 inset; }
+.monaco-editor .scroll-decoration { box-shadow: #dddddd 0 6px 6px -6px inset; }
+.monaco-editor .focused .selected-text { background-color: #add6ff; }
+.monaco-editor .selected-text { background-color: #e5ebf1; }
+.monaco-editor .cursor { background-color: #000000; border-color: #000000; color: #ffffff; }
+.monaco-editor .squiggly-error { background: url("data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%206%203'%20enable-background%3D'new%200%200%206%203'%20height%3D'3'%20width%3D'6'%3E%3Cg%20fill%3D'%23d60a0a'%3E%3Cpolygon%20points%3D'5.5%2C0%202.5%2C3%201.1%2C3%204.1%2C0'%2F%3E%3Cpolygon%20points%3D'4%2C0%206%2C2%206%2C0.6%205.4%2C0'%2F%3E%3Cpolygon%20points%3D'0%2C2%201%2C3%202.4%2C3%200%2C0.6'%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E") repeat-x bottom left; }
+.monaco-editor .squiggly-warning { background: url("data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%206%203'%20enable-background%3D'new%200%200%206%203'%20height%3D'3'%20width%3D'6'%3E%3Cg%20fill%3D'%23117711'%3E%3Cpolygon%20points%3D'5.5%2C0%202.5%2C3%201.1%2C3%204.1%2C0'%2F%3E%3Cpolygon%20points%3D'4%2C0%206%2C2%206%2C0.6%205.4%2C0'%2F%3E%3Cpolygon%20points%3D'0%2C2%201%2C3%202.4%2C3%200%2C0.6'%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E") repeat-x bottom left; }
+.monaco-editor .squiggly-info { background: url("data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%206%203'%20enable-background%3D'new%200%200%206%203'%20height%3D'3'%20width%3D'6'%3E%3Cg%20fill%3D'%23008000'%3E%3Cpolygon%20points%3D'5.5%2C0%202.5%2C3%201.1%2C3%204.1%2C0'%2F%3E%3Cpolygon%20points%3D'4%2C0%206%2C2%206%2C0.6%205.4%2C0'%2F%3E%3Cpolygon%20points%3D'0%2C2%201%2C3%202.4%2C3%200%2C0.6'%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E") repeat-x bottom left; }
+.monaco-editor .squiggly-hint { background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20height%3D%223%22%20width%3D%2212%22%3E%3Cg%20fill%3D%22%236c6c6c%22%3E%3Ccircle%20cx%3D%221%22%20cy%3D%221%22%20r%3D%221%22%2F%3E%3Ccircle%20cx%3D%225%22%20cy%3D%221%22%20r%3D%221%22%2F%3E%3Ccircle%20cx%3D%229%22%20cy%3D%221%22%20r%3D%221%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E") no-repeat bottom left; }
+.showUnused .monaco-editor .squiggly-inline-unnecessary { opacity: 0.467; }
+.monaco-diff-editor .diff-review-line-number { color: #237893; }
+.monaco-diff-editor .diff-review-shadow { box-shadow: #dddddd 0 -6px 6px -6px inset; }
+.monaco-editor .line-insert, .monaco-editor .char-insert { background-color: rgba(155, 185, 85, 0.2); }
+.monaco-diff-editor .line-insert, .monaco-diff-editor .char-insert { background-color: rgba(155, 185, 85, 0.2); }
+.monaco-editor .inline-added-margin-view-zone { background-color: rgba(155, 185, 85, 0.2); }
+.monaco-editor .line-delete, .monaco-editor .char-delete { background-color: rgba(255, 0, 0, 0.2); }
+.monaco-diff-editor .line-delete, .monaco-diff-editor .char-delete { background-color: rgba(255, 0, 0, 0.2); }
+.monaco-editor .inline-deleted-margin-view-zone { background-color: rgba(255, 0, 0, 0.2); }
+.monaco-diff-editor.side-by-side .editor.modified { box-shadow: -6px 0 5px -5px #dddddd; }
+.monaco-editor .bracket-match { background-color: rgba(0, 100, 0, 0.1); }
+.monaco-editor .bracket-match { border: 1px solid #b9b9b9; }
+.monaco-editor .monaco-editor-overlaymessage .anchor { border-top-color: #007acc; }
+.monaco-editor .monaco-editor-overlaymessage .message { border: 1px solid #007acc; }
+.monaco-editor .monaco-editor-overlaymessage .message { background-color: #d6ecf2; }
+.monaco-editor .codelens-decoration { color: #999999; }
+.monaco-editor .codelens-decoration > a:hover { color: #0000ff !important; }
+.monaco-editor .findOptionsWidget { background-color: #f3f3f3; }
+.monaco-editor .findOptionsWidget { box-shadow: 0 2px 8px #a8a8a8; }
+.monaco-editor .findMatch { background-color: rgba(234, 92, 0, 0.33); }
+.monaco-editor .currentFindMatch { background-color: #a8ac94; }
+.monaco-editor .findScope { background-color: rgba(180, 180, 180, 0.3); }
+.monaco-editor .find-widget { background-color: #f3f3f3; }
+.monaco-editor .find-widget { box-shadow: 0 2px 8px #a8a8a8; }
+.monaco-editor .find-widget.no-results .matchesCount { color: #a1260d; }
+.monaco-editor .find-widget .monaco-sash { background-color: #c8c8c8; width: 3px !important; margin-left: -4px;}
+.monaco-editor .find-widget .monaco-checkbox .checkbox:checked + .label { border: 1px solid #007acc; }
+.monaco-editor .reference-zone-widget .ref-tree .referenceMatch { background-color: rgba(234, 92, 0, 0.3); }
+.monaco-editor .reference-zone-widget .preview .reference-decoration { background-color: rgba(245, 216, 2, 0.87); }
+.monaco-editor .reference-zone-widget .ref-tree { background-color: #f3f3f3; }
+.monaco-editor .reference-zone-widget .ref-tree { color: #646465; }
+.monaco-editor .reference-zone-widget .ref-tree .reference-file { color: #1e1e1e; }
+.monaco-editor .reference-zone-widget .ref-tree .monaco-list:focus .monaco-list-rows > .monaco-list-row.selected:not(.highlighted) { background-color: rgba(51, 153, 255, 0.2); }
+.monaco-editor .reference-zone-widget .ref-tree .monaco-list:focus .monaco-list-rows > .monaco-list-row.selected:not(.highlighted) { color: #6c6c6c !important; }
+.monaco-editor .reference-zone-widget .preview .monaco-editor .monaco-editor-background,.monaco-editor .reference-zone-widget .preview .monaco-editor .inputarea.ime-input {	background-color: #f2f8fc;}
+.monaco-editor .reference-zone-widget .preview .monaco-editor .margin {	background-color: #f2f8fc;}
+.monaco-editor .goto-definition-link { color: #0000ff !important; }
+.monaco-editor .marker-widget a { color: #006ab1; }
+.monaco-editor .hoverHighlight { background-color: rgba(173, 214, 255, 0.15); }
+.monaco-editor .monaco-editor-hover { background-color: #f3f3f3; }
+.monaco-editor .monaco-editor-hover { border: 1px solid #c8c8c8; }
+.monaco-editor .monaco-editor-hover .hover-row:not(:first-child):not(:empty) { border-top: 1px solid rgba(200, 200, 200, 0.5); }
+.monaco-editor .monaco-editor-hover hr { border-top: 1px solid rgba(200, 200, 200, 0.5); }
+.monaco-editor .monaco-editor-hover hr { border-bottom: 0px solid rgba(200, 200, 200, 0.5); }
+.monaco-editor .monaco-editor-hover a { color: #006ab1; }
+.monaco-editor .monaco-editor-hover .hover-row .actions { background-color: #e7e7e7; }
+.monaco-editor .monaco-editor-hover code { background-color: rgba(220, 220, 220, 0.4); }
+.monaco-editor.vs .valueSetReplacement { outline: solid 2px #b9b9b9; }
+.monaco-editor .detected-link-active { color: #0000ff !important; }
+.monaco-editor .parameter-hints-widget { border: 1px solid #c8c8c8; }
+.monaco-editor .parameter-hints-widget.multiple .body { border-left: 1px solid rgba(200, 200, 200, 0.5); }
+.monaco-editor .parameter-hints-widget .signature.has-docs { border-bottom: 1px solid rgba(200, 200, 200, 0.5); }
+.monaco-editor .parameter-hints-widget { background-color: #f3f3f3; }
+.monaco-editor .parameter-hints-widget a { color: #006ab1; }
+.monaco-editor .parameter-hints-widget code { background-color: rgba(220, 220, 220, 0.4); }
+.monaco-editor .snippet-placeholder { background-color: rgba(10, 50, 100, 0.2); outline-color: transparent; }
+.monaco-editor .finish-snippet-placeholder { background-color: transparent; outline-color: rgba(10, 50, 100, 0.5); }
+.monaco-editor .suggest-widget .monaco-list .monaco-list-row .monaco-highlighted-label .highlight { color: #0066bf; }
+.monaco-editor .suggest-widget { color: #000000; }
+.monaco-editor .suggest-widget a { color: #006ab1; }
+.monaco-editor .suggest-widget code { background-color: rgba(220, 220, 220, 0.4); }
+.monaco-editor .focused .selectionHighlight { background-color: rgba(173, 214, 255, 0.3); }
+.monaco-editor .selectionHighlight { background-color: rgba(173, 214, 255, 0.15); }
+.monaco-editor .wordHighlight { background-color: rgba(87, 87, 87, 0.25); }
+.monaco-editor .wordHighlightStrong { background-color: rgba(14, 99, 156, 0.25); }
+.monaco-editor .accessibilityHelpWidget { background-color: #f3f3f3; }
+.monaco-editor .accessibilityHelpWidget { box-shadow: 0 2px 8px #a8a8a8; }
+.monaco-editor .tokens-inspect-widget { border: 1px solid #c8c8c8; }
+.monaco-editor .tokens-inspect-widget .tokens-inspect-separator { background-color: #c8c8c8; }
+.monaco-editor .tokens-inspect-widget { background-color: #f3f3f3; }
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+.mtk1 { color: #000000; }
+.mtk2 { color: #fffffe; }
+.mtk3 { color: #808080; }
+.mtk4 { color: #ff0000; }
+.mtk5 { color: #0451a5; }
+.mtk6 { color: #0000ff; }
+.mtk7 { color: #09885a; }
+.mtk8 { color: #008000; }
+.mtk9 { color: #dd0000; }
+.mtk10 { color: #383838; }
+.mtk11 { color: #cd3131; }
+.mtk12 { color: #863b00; }
+.mtk13 { color: #af00db; }
+.mtk14 { color: #800000; }
+.mtk15 { color: #e00000; }
+.mtk16 { color: #3030c0; }
+.mtk17 { color: #666666; }
+.mtk18 { color: #778899; }
+.mtk19 { color: #ff00ff; }
+.mtk20 { color: #a31515; }
+.mtk21 { color: #4f76ac; }
+.mtk22 { color: #008080; }
+.mtk23 { color: #001188; }
+.mtk24 { color: #4864aa; }
+.mtki { font-style: italic; }
+.mtkb { font-weight: bold; }
+.mtku { text-decoration: underline; text-underline-position: under; }</style><style type="text/css" media="screen"></style></head>
+<body>
+<div data-v-a67a9794="" class="ide-wrapper"><div data-v-0770f6a2="" data-v-a67a9794="" class="ide"><div data-v-0770f6a2="" class="code-editor-container"><div data-v-3093bf43="" data-v-0770f6a2="" class="editor-background" title="代码"><div data-v-3093bf43="" class="editor-top-bar"><div data-v-3093bf43="" class="editor-tabs"><div data-v-3093bf43="" class="editor-tab editor-title editor-tab editor-title-visible"><i data-v-3093bf43="" class="fas fa-code editor-title-icon"></i><span data-v-3093bf43="">代码</span></div></div><div data-v-0770f6a2="" data-v-3093bf43="" class="editor-actions-container"><div data-v-543a16f4="" data-v-0770f6a2="" class="editor-action" data-v-3093bf43=""><input data-v-543a16f4="" id="check-1" type="checkbox" value=""><label data-v-543a16f4="" for="check-1"><i data-v-543a16f4="" class="far fa-square"></i>
+          O2
+        </label></div><div data-v-073f5348="" data-v-0770f6a2="" class="combo-wrapper lang-select editor-action" data-v-3093bf43=""><div data-v-073f5348="" class="text">
+    Python 3
+  </div><span data-v-073f5348="" class="arrow"><i data-v-073f5348="" class="fa fa-angle-down"></i></span><div data-v-073f5348="" class="dropdown-wrap"><ul data-v-073f5348="" tabindex="-1"><li data-v-073f5348="">
+        Pascal
+      </li><li data-v-073f5348="">
+        C
+      </li><li data-v-073f5348="">
+        C++
+      </li><li data-v-073f5348="">
+        C++11
+      </li><li data-v-073f5348="">
+        C++14
+      </li><li data-v-073f5348="">
+        C++17
+      </li><li data-v-073f5348="">
+        Python 2
+      </li><li data-v-073f5348="">
+        Python 3
+      </li><li data-v-073f5348="">
+        PyPy 2
+      </li><li data-v-073f5348="">
+        PyPy 3
+      </li><li data-v-073f5348="">
+        Java 8
+      </li><li data-v-073f5348="">
+        Node.js
+      </li><li data-v-073f5348="">
+        Ruby
+      </li><li data-v-073f5348="">
+        Go
+      </li><li data-v-073f5348="">
+        Rust
+      </li><li data-v-073f5348="">
+        PHP 7
+      </li><li data-v-073f5348="">
+        C# Mono
+      </li><li data-v-073f5348="">
+        Visual Basic Mono
+      </li><li data-v-073f5348="">
+        Haskell
+      </li><li data-v-073f5348="">
+        Kotlin/Native
+      </li><li data-v-073f5348="">
+        Kotlin/JVM
+      </li><li data-v-073f5348="">
+        Scala
+      </li><li data-v-073f5348="">
+        Perl
+      </li><li data-v-073f5348="">
+        文言
+      </li></ul></div></div></div></div><div data-v-3093bf43="" class="editor code-editor showUnused" data-keybinding-context="1" data-mode-id="cpp"><div class="monaco-editor no-user-select  vs" data-uri="inmemory://model/1" style="width: 848px; height: 368px;"><div data-mprt="3" class="overflow-guard" style="width: 848px; height: 368px;"><div class="margin" role="presentation" aria-hidden="true" style="position: absolute; will-change: transform; top: 0px; height: 387px; width: 64px;"><div class="glyph-margin" style="left: 0px; width: 0px; height: 387px;"></div><div class="margin-view-zones" role="presentation" aria-hidden="true" style="position: absolute;"></div><div class="margin-view-overlays" role="presentation" aria-hidden="true" style="position: absolute; width: 64px; font-family: Consolas, &quot;Courier New&quot;, monospace; font-weight: normal; font-size: 14px; line-height: 19px; letter-spacing: 0px; height: 387px;"><div style="position:absolute;top:0px;width:100%;height:19px;"><div class="current-line" style="width:64px; height:19px;"></div><div class="line-numbers" style="left:0px;width:38px;">1</div></div><div style="position:absolute;top:19px;width:100%;height:19px;"><div class="line-numbers" style="left:0px;width:38px;">2</div></div></div></div><div class="monaco-scrollable-element editor-scrollable vs" role="presentation" data-mprt="5" style="position: absolute; overflow: hidden; left: 64px; width: 784px; height: 368px;"><div class="lines-content monaco-editor-background" style="position: absolute; overflow: hidden; width: 1e+06px; height: 1e+06px; will-change: transform; top: 0px; left: 0px;"><div class="view-overlays" role="presentation" aria-hidden="true" style="position: absolute; height: 0px; width: 784px;"><div style="position:absolute;top:0px;width:100%;height:19px;"><div class="current-line" style="width:784px; height:19px;"></div></div><div style="position:absolute;top:19px;width:100%;height:19px;"></div></div><div role="presentation" aria-hidden="true" class="view-rulers"></div><div class="view-zones" role="presentation" aria-hidden="true" style="position: absolute;"></div><div class="view-lines" role="presentation" aria-hidden="true" data-mprt="7" style="position: absolute; font-family: Consolas, &quot;Courier New&quot;, monospace; font-weight: normal; font-size: 14px; line-height: 19px; letter-spacing: 0px; width: 784px; height: 387px;"><div style="top:0px;height:19px;" class="view-line"><span><span class="mtk1">a&nbsp;=&nbsp;input();</span></span></div><div style="top:19px;height:19px;" class="view-line"><span><span class="mtk1">print(&nbsp;a&nbsp;*&nbsp;</span><span class="mtk7">2</span><span class="mtk1">&nbsp;-&nbsp;</span><span class="mtk7">1</span><span class="mtk1">&nbsp;);</span></span></div></div><div data-mprt="1" class="contentWidgets" style="position: absolute; top: 0px;"><div class="lightbulb-glyph" title="Show Fixes (Ctrl+.)" widgetid="LightBulbWidget" style="position: absolute; visibility: hidden; max-width: 1216px;"></div></div><div role="presentation" aria-hidden="true" class="cursors-layer cursor-line-style cursor-solid"><div class="cursor " style="height: 19px; top: 0px; left: 0px; font-family: Consolas, &quot;Courier New&quot;, monospace; font-weight: normal; font-size: 14px; line-height: 19px; letter-spacing: 0px; display: block; visibility: hidden; width: 2px;"></div></div></div><div role="presentation" aria-hidden="true" class="invisible scrollbar horizontal" style="position: absolute; width: 770px; height: 10px; left: 0px; bottom: 0px;"><div class="slider" style="position: absolute; top: 0px; left: 0px; height: 10px; will-change: transform; width: 770px;"></div></div><canvas class="decorationsOverviewRuler" aria-hidden="true" width="21" height="552" style="position: absolute; will-change: transform; top: 0px; right: 0px; width: 14px; height: 368px;"></canvas><div role="presentation" aria-hidden="true" class="visible scrollbar vertical" style="position: absolute; width: 14px; height: 368px; right: 0px; top: 0px;"><div class="slider" style="position: absolute; top: 0px; left: 0px; width: 14px; will-change: transform; height: 349px;"></div></div></div><div role="presentation" aria-hidden="true" style="width: 848px;"></div><textarea data-mprt="6" class="inputarea" wrap="off" autocorrect="off" autocapitalize="off" autocomplete="off" spellcheck="false" aria-label="Editor content;Press Alt+F1 for Accessibility Options." role="textbox" aria-multiline="true" aria-haspopup="false" aria-autocomplete="both" style="font-size: 1px; line-height: 19px; top: 0px; left: 64px; width: 1px; height: 1px;"></textarea><div style="position: absolute; top: 0px; left: 0px; width: 0px; height: 0px;"></div><div data-mprt="4" class="overlayWidgets" style="width: 848px;"><div class="accessibilityHelpWidget" role="dialog" aria-hidden="true" widgetid="editor.contrib.accessibilityHelpWidget" style="display: none; position: absolute;"><div role="document"></div></div><div class="monaco-editor-hover hidden" aria-hidden="true" role="presentation" widgetid="editor.contrib.modesGlyphHoverWidget" style="position: absolute;"></div></div><div data-mprt="8" class="minimap slider-mouseover" role="presentation" aria-hidden="true" style="position: absolute; left: 0px; width: 0px; height: 368px;"><div class="minimap-shadow-hidden" style="height: 368px;"></div><canvas width="1" height="552" style="position: absolute; left: 0px; width: 0.666667px; height: 368px;"></canvas><div class="minimap-slider" style="position: absolute; will-change: transform; width: 0px;"><div class="minimap-slider-horizontal" style="position: absolute; width: 0px; height: 0px;"></div></div></div></div><div data-mprt="2" class="overflowingContentWidgets"><div class="monaco-editor-hover hidden" tabindex="0" widgetid="editor.contrib.modesContentHoverWidget" style="position: absolute; visibility: hidden; max-width: 1280px;"><div class="monaco-scrollable-element " role="presentation" style="position: relative; overflow: hidden;"><div class="monaco-editor-hover-content" style="overflow: hidden; font-size: 14px; line-height: 19px; max-height: 250px; max-width: 559.68px;"></div><div role="presentation" aria-hidden="true" class="invisible scrollbar horizontal" style="position: absolute;"><div class="slider" style="position: absolute; top: 0px; left: 0px; height: 10px; will-change: transform;"></div></div><div role="presentation" aria-hidden="true" class="invisible scrollbar vertical" style="position: absolute;"><div class="slider" style="position: absolute; top: 0px; left: 0px; width: 10px; will-change: transform;"></div></div><div class="shadow"></div><div class="shadow"></div><div class="shadow top-left-corner"></div></div></div><div class="editor-widget suggest-widget" widgetid="editor.widget.suggestWidget" style="position: absolute; visibility: inherit; max-width: 848px; top: 19px; left: 64px;" monaco-visible-content-widget="true"><div class="message" aria-hidden="true" style="display: none; background-color: rgb(243, 243, 243); border-color: rgb(200, 200, 200);"></div><div class="tree" aria-hidden="true" style="display: none; background-color: rgb(243, 243, 243); border-color: rgb(200, 200, 200);"><div class="monaco-list list_id_1" tabindex="0" role="tree"><div class="monaco-scrollable-element " role="presentation" style="position: relative; overflow: hidden;"><div class="monaco-list-rows" style="overflow: hidden;"></div><div role="presentation" aria-hidden="true" class="invisible scrollbar horizontal" style="position: absolute;"><div class="slider" style="position: absolute; top: 0px; left: 0px; height: 10px; will-change: transform;"></div></div><div role="presentation" aria-hidden="true" class="invisible scrollbar vertical" style="position: absolute;"><div class="slider" style="position: absolute; top: 0px; left: 0px; width: 10px; will-change: transform;"></div></div></div><style type="text/css" media="screen">.monaco-list.list_id_1:focus .monaco-list-row.focused { background-color: #d6ebff; }
+.monaco-list.list_id_1:focus .monaco-list-row.focused:hover { background-color: #d6ebff; }
+.monaco-list.list_id_1:focus .monaco-list-row.selected { background-color: #0069d1; }
+.monaco-list.list_id_1:focus .monaco-list-row.selected:hover { background-color: #0069d1; }
+.monaco-list.list_id_1:focus .monaco-list-row.selected { color: #ffffff; }
 
-				<!-- Main -->
-					<section id="main">
-						<header>
-							<span class="avatar"><img src="images/avatar.png" alt=""></span>
-							<h1>rui_er</h1>
-							<p>AFO</p>
-						</header>
-						<footer>
-							<ul class="icons">
-								<li><a href="https://github.com/qz-cqy" class="icon brands fa-github">Github</a></li>
-								<li><a href="https://vk.com/id585734755" class="icon brands fa-vk">VK</a></li>
-								<li><a href="mailto:caiqiyu_cwxx@sina.com" class="fa fa-fw fa-envelope">Email</a></li>
-							</ul>
-							<ul class="actions special">
-								<li><a href="https://blog.ak-ioi.cf" class="button">BLOG</a></li>
-								<li><a href="http://oj.ak-ioi.cf" class="button">OJ</a></li>
-							</ul>
-						</footer>
-					</section>
+				.monaco-drag-image,
+				.monaco-list.list_id_1:focus .monaco-list-row.selected.focused { background-color: #0074e8; }
+			
 
-				<!-- Footer -->
-					<footer id="footer">
-						<ul class="copyright">
-							<li>2020 © RUI_ER</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-						</ul>
-					</footer>
+				.monaco-drag-image,
+				.monaco-list.list_id_1:focus .monaco-list-row.selected.focused { color: #ffffff; }
+			
+.monaco-list.list_id_1 .monaco-list-row.focused { background-color:  #d6ebff; }
+.monaco-list.list_id_1 .monaco-list-row.focused:hover { background-color:  #d6ebff; }
+.monaco-list.list_id_1 .monaco-list-row.selected { background-color:  #e4e6f1; }
+.monaco-list.list_id_1 .monaco-list-row.selected:hover { background-color:  #e4e6f1; }
+.monaco-list.list_id_1:not(.drop-target) .monaco-list-row:hover:not(.selected):not(.focused) { background-color:  #f0f0f0; }
 
-			</div>
+				.monaco-list.list_id_1.drop-target,
+				.monaco-list.list_id_1 .monaco-list-row.drop-target { background-color: #d6ebff !important; color: inherit !important; }
+			
+.monaco-list-type-filter { background-color: #efc1ad }
+.monaco-list-type-filter { border: 1px solid rgba(0, 0, 0, 0); }
+.monaco-list-type-filter.no-matches { border: 1px solid #be1100; }
+.monaco-list-type-filter { box-shadow: 1px 1px 1px #a8a8a8; }</style></div></div><div class="details" aria-hidden="true" style="font-size: 14px; font-weight: normal; display: none; background-color: rgb(243, 243, 243); border-color: rgb(200, 200, 200);"><div class="monaco-scrollable-element " role="presentation" style="position: relative; overflow: hidden;"><div class="body" style="overflow: hidden;"><div class="header"><span class="close" title="Read less... (Ctrl+Space)" style="height: 19px; width: 19px;"></span><p class="type" style="font-family: Consolas, &quot;Courier New&quot;, monospace;"></p></div><p class="docs"></p></div><div role="presentation" aria-hidden="true" class="invisible scrollbar horizontal" style="position: absolute;"><div class="slider" style="position: absolute; top: 0px; left: 0px; height: 10px; will-change: transform;"></div></div><div role="presentation" aria-hidden="true" class="invisible scrollbar vertical" style="position: absolute;"><div class="slider" style="position: absolute; top: 0px; left: 0px; width: 10px; will-change: transform;"></div></div><div class="shadow"></div><div class="shadow"></div><div class="shadow top-left-corner"></div></div></div></div></div><div class="context-view" aria-hidden="true" style="display: none;"></div></div></div></div></div><div data-v-0770f6a2="" class="io-editor-container" style="height: 172.8px;"><div data-v-0770f6a2="" class="sash sash-horizon"></div><div data-v-0770f6a2="" class="input-editor-container"><div data-v-3093bf43="" data-v-0770f6a2="" class="editor-background"><div data-v-3093bf43="" class="editor-top-bar"><div data-v-3093bf43="" class="editor-tabs"><div data-v-3093bf43="" class="editor-tab editor-title editor-tab editor-title-visible"><i data-v-3093bf43="" class="fas fa-code editor-title-icon"></i><span data-v-3093bf43="">输入</span></div></div><div data-v-0770f6a2="" data-v-3093bf43="" class="editor-actions-container" style="display: none;"><strong data-v-0770f6a2="" data-v-3093bf43="" class="editor-run-info"></strong><button data-v-0770f6a2="" data-v-3093bf43="" class="editor-icon-action"><i data-v-0770f6a2="" data-v-3093bf43="" class="fas fa-play"></i> 运行
+            </button><!----></div></div><div data-v-3093bf43="" class="editor code-editor showUnused" data-keybinding-context="1" data-mode-id="plaintext"><div class="monaco-editor no-user-select  vs" data-uri="inmemory://model/2" style="width: 424px; height: 137px;"><div data-mprt="3" class="overflow-guard" style="width: 424px; height: 137px;"><div class="margin" role="presentation" aria-hidden="true" style="position: absolute; will-change: transform; top: 0px; height: 137px; width: 64px;"><div class="glyph-margin" style="left: 0px; width: 0px; height: 137px;"></div><div class="margin-view-zones" role="presentation" aria-hidden="true" style="position: absolute;"></div><div class="margin-view-overlays" role="presentation" aria-hidden="true" style="position: absolute; width: 64px; font-family: Consolas, &quot;Courier New&quot;, monospace; font-weight: normal; font-size: 14px; line-height: 19px; letter-spacing: 0px; height: 137px;"><div style="position:absolute;top:0px;width:100%;height:19px;"><div class="current-line" style="width:64px; height:19px;"></div><div class="line-numbers" style="left:0px;width:38px;">1</div></div></div></div><div class="monaco-scrollable-element editor-scrollable vs" role="presentation" data-mprt="5" style="position: absolute; overflow: hidden; left: 64px; width: 360px; height: 137px;"><div class="lines-content monaco-editor-background" style="position: absolute; overflow: hidden; width: 1e+06px; height: 1e+06px; will-change: transform; top: 0px; left: 0px;"><div class="view-overlays" role="presentation" aria-hidden="true" style="position: absolute; height: 0px; width: 360px;"><div style="position:absolute;top:0px;width:100%;height:19px;"><div class="current-line" style="width:360px; height:19px;"></div></div></div><div role="presentation" aria-hidden="true" class="view-rulers"></div><div class="view-zones" role="presentation" aria-hidden="true" style="position: absolute;"></div><div class="view-lines" role="presentation" aria-hidden="true" data-mprt="7" style="position: absolute; font-family: Consolas, &quot;Courier New&quot;, monospace; font-weight: normal; font-size: 14px; line-height: 19px; letter-spacing: 0px; width: 360px; height: 137px;"><div style="top:0px;height:19px;" class="view-line"><span><span>&nbsp;</span></span></div></div><div data-mprt="1" class="contentWidgets" style="position: absolute; top: 0px;"><div class="lightbulb-glyph" title="Show Fixes (Ctrl+.)" widgetid="LightBulbWidget" style="position: absolute; visibility: hidden; max-width: 575px;"></div></div><div role="presentation" aria-hidden="true" class="cursors-layer cursor-line-style cursor-solid"><div class="cursor " style="height: 19px; top: 0px; left: 0px; font-family: Consolas, &quot;Courier New&quot;, monospace; font-weight: normal; font-size: 14px; line-height: 19px; letter-spacing: 0px; display: block; visibility: hidden; width: 2px;"></div></div></div><div role="presentation" aria-hidden="true" class="invisible scrollbar horizontal" style="position: absolute; width: 346px; height: 10px; left: 0px; bottom: 0px;"><div class="slider" style="position: absolute; top: 0px; left: 0px; height: 10px; will-change: transform; width: 346px;"></div></div><canvas class="decorationsOverviewRuler" aria-hidden="true" width="21" height="205" style="position: absolute; will-change: transform; top: 0px; right: 0px; width: 14px; height: 137px;"></canvas><div role="presentation" aria-hidden="true" class="invisible scrollbar vertical" style="position: absolute; width: 14px; height: 137px; right: 0px; top: 0px;"><div class="slider" style="position: absolute; top: 0px; left: 0px; width: 14px; will-change: transform; height: 137px;"></div></div></div><div role="presentation" aria-hidden="true" style="width: 424px;"></div><textarea data-mprt="6" class="inputarea" wrap="off" autocorrect="off" autocapitalize="off" autocomplete="off" spellcheck="false" aria-label="Editor content;Press Alt+F1 for Accessibility Options." role="textbox" aria-multiline="true" aria-haspopup="false" aria-autocomplete="both" style="font-size: 1px; line-height: 19px; top: 0px; left: 64px; width: 1px; height: 1px;"></textarea><div style="position: absolute; top: 0px; left: 0px; width: 0px; height: 0px;"></div><div data-mprt="4" class="overlayWidgets" style="width: 424px;"><div class="accessibilityHelpWidget" role="dialog" aria-hidden="true" widgetid="editor.contrib.accessibilityHelpWidget" style="display: none; position: absolute;"><div role="document"></div></div></div><div data-mprt="8" class="minimap slider-mouseover" role="presentation" aria-hidden="true" style="position: absolute; left: 0px; width: 0px; height: 137px;"><div class="minimap-shadow-hidden" style="height: 137px;"></div><canvas width="1" height="205" style="position: absolute; left: 0px; width: 0.666667px; height: 136.667px;"></canvas><div class="minimap-slider" style="position: absolute; will-change: transform; width: 0px;"><div class="minimap-slider-horizontal" style="position: absolute; width: 0px; height: 0px;"></div></div></div></div><div data-mprt="2" class="overflowingContentWidgets"><div class="editor-widget suggest-widget" widgetid="editor.widget.suggestWidget" style="position: absolute; visibility: inherit; max-width: 848px; top: 19px; left: 64px;" monaco-visible-content-widget="true"><div class="message" aria-hidden="true" style="display: none; background-color: rgb(243, 243, 243); border-color: rgb(200, 200, 200);"></div><div class="tree" aria-hidden="true" style="display: none; background-color: rgb(243, 243, 243); border-color: rgb(200, 200, 200);"><div class="monaco-list list_id_2" tabindex="0" role="tree"><div class="monaco-scrollable-element " role="presentation" style="position: relative; overflow: hidden;"><div class="monaco-list-rows" style="overflow: hidden;"></div><div role="presentation" aria-hidden="true" class="invisible scrollbar horizontal" style="position: absolute;"><div class="slider" style="position: absolute; top: 0px; left: 0px; height: 10px; will-change: transform;"></div></div><div role="presentation" aria-hidden="true" class="invisible scrollbar vertical" style="position: absolute;"><div class="slider" style="position: absolute; top: 0px; left: 0px; width: 10px; will-change: transform;"></div></div></div><style type="text/css" media="screen">.monaco-list.list_id_2:focus .monaco-list-row.focused { background-color: #d6ebff; }
+.monaco-list.list_id_2:focus .monaco-list-row.focused:hover { background-color: #d6ebff; }
+.monaco-list.list_id_2:focus .monaco-list-row.selected { background-color: #0069d1; }
+.monaco-list.list_id_2:focus .monaco-list-row.selected:hover { background-color: #0069d1; }
+.monaco-list.list_id_2:focus .monaco-list-row.selected { color: #ffffff; }
 
-		<!-- Scripts -->
-			<script>
-				if ('addEventListener' in window) {
-					window.addEventListener('load', function() { document.body.className = document.body.className.replace(/\bis-preload\b/, ''); });
-					document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
-				}
-			</script>
+				.monaco-drag-image,
+				.monaco-list.list_id_2:focus .monaco-list-row.selected.focused { background-color: #0074e8; }
+			
 
-	
+				.monaco-drag-image,
+				.monaco-list.list_id_2:focus .monaco-list-row.selected.focused { color: #ffffff; }
+			
+.monaco-list.list_id_2 .monaco-list-row.focused { background-color:  #d6ebff; }
+.monaco-list.list_id_2 .monaco-list-row.focused:hover { background-color:  #d6ebff; }
+.monaco-list.list_id_2 .monaco-list-row.selected { background-color:  #e4e6f1; }
+.monaco-list.list_id_2 .monaco-list-row.selected:hover { background-color:  #e4e6f1; }
+.monaco-list.list_id_2:not(.drop-target) .monaco-list-row:hover:not(.selected):not(.focused) { background-color:  #f0f0f0; }
+
+				.monaco-list.list_id_2.drop-target,
+				.monaco-list.list_id_2 .monaco-list-row.drop-target { background-color: #d6ebff !important; color: inherit !important; }
+			
+.monaco-list-type-filter { background-color: #efc1ad }
+.monaco-list-type-filter { border: 1px solid rgba(0, 0, 0, 0); }
+.monaco-list-type-filter.no-matches { border: 1px solid #be1100; }
+.monaco-list-type-filter { box-shadow: 1px 1px 1px #a8a8a8; }</style></div></div><div class="details" aria-hidden="true" style="font-size: 14px; font-weight: normal; display: none; background-color: rgb(243, 243, 243); border-color: rgb(200, 200, 200);"><div class="monaco-scrollable-element " role="presentation" style="position: relative; overflow: hidden;"><div class="body" style="overflow: hidden;"><div class="header"><span class="close" title="Read less... (Ctrl+Space)" style="height: 19px; width: 19px;"></span><p class="type" style="font-family: Consolas, &quot;Courier New&quot;, monospace;"></p></div><p class="docs"></p></div><div role="presentation" aria-hidden="true" class="invisible scrollbar horizontal" style="position: absolute;"><div class="slider" style="position: absolute; top: 0px; left: 0px; height: 10px; will-change: transform;"></div></div><div role="presentation" aria-hidden="true" class="invisible scrollbar vertical" style="position: absolute;"><div class="slider" style="position: absolute; top: 0px; left: 0px; width: 10px; will-change: transform;"></div></div><div class="shadow"></div><div class="shadow"></div><div class="shadow top-left-corner"></div></div></div></div></div><div class="context-view" aria-hidden="true" style="display: none;"></div></div></div></div></div><div data-v-0770f6a2="" class="sash sash-vertical"></div><div data-v-0770f6a2="" class="output-editor-container"><div data-v-3093bf43="" data-v-0770f6a2="" class="editor-background"><div data-v-3093bf43="" class="editor-top-bar"><div data-v-3093bf43="" class="editor-tabs"><div data-v-3093bf43="" class="editor-tab editor-title editor-tab editor-title-visible"><i data-v-3093bf43="" class="fas fa-code editor-title-icon"></i><span data-v-3093bf43="">输出</span></div></div><div data-v-0770f6a2="" data-v-3093bf43="" class="editor-actions-container"><strong data-v-0770f6a2="" data-v-3093bf43="" class="editor-run-info"></strong><button data-v-0770f6a2="" data-v-3093bf43="" class="editor-icon-action"><i data-v-0770f6a2="" data-v-3093bf43="" class="fas fa-play"></i> 运行
+            </button><!----></div></div><div data-v-3093bf43="" class="editor code-editor showUnused" data-keybinding-context="1" data-mode-id="plaintext"><div class="monaco-editor no-user-select  vs" data-uri="inmemory://model/3" style="width: 424px; height: 137px;"><div data-mprt="3" class="overflow-guard" style="width: 424px; height: 137px;"><div class="margin" role="presentation" aria-hidden="true" style="position: absolute; will-change: transform; top: 0px; height: 137px; width: 64px;"><div class="glyph-margin" style="left: 0px; width: 0px; height: 137px;"></div><div class="margin-view-zones" role="presentation" aria-hidden="true" style="position: absolute;"></div><div class="margin-view-overlays" role="presentation" aria-hidden="true" style="position: absolute; width: 64px; font-family: Consolas, &quot;Courier New&quot;, monospace; font-weight: normal; font-size: 14px; line-height: 19px; letter-spacing: 0px; height: 137px;"><div style="position:absolute;top:0px;width:100%;height:19px;"><div class="current-line" style="width:64px; height:19px;"></div><div class="line-numbers" style="left:0px;width:38px;">1</div></div></div></div><div class="monaco-scrollable-element editor-scrollable vs" role="presentation" data-mprt="5" style="position: absolute; overflow: hidden; left: 64px; width: 360px; height: 137px;"><div class="lines-content monaco-editor-background" style="position: absolute; overflow: hidden; width: 1e+06px; height: 1e+06px; will-change: transform; top: 0px; left: 0px;"><div class="view-overlays" role="presentation" aria-hidden="true" style="position: absolute; height: 0px; width: 360px;"><div style="position:absolute;top:0px;width:100%;height:19px;"><div class="current-line" style="width:360px; height:19px;"></div></div></div><div role="presentation" aria-hidden="true" class="view-rulers"></div><div class="view-zones" role="presentation" aria-hidden="true" style="position: absolute;"></div><div class="view-lines" role="presentation" aria-hidden="true" data-mprt="7" style="position: absolute; font-family: Consolas, &quot;Courier New&quot;, monospace; font-weight: normal; font-size: 14px; line-height: 19px; letter-spacing: 0px; width: 360px; height: 137px;"><div style="top:0px;height:19px;" class="view-line"><span><span>&nbsp;</span></span></div></div><div data-mprt="1" class="contentWidgets" style="position: absolute; top: 0px;"><div class="lightbulb-glyph" title="Show Fixes (Ctrl+.)" widgetid="LightBulbWidget" style="position: absolute; visibility: hidden; max-width: 575px;"></div></div><div role="presentation" aria-hidden="true" class="cursors-layer cursor-line-style cursor-solid"><div class="cursor " style="height: 19px; top: 0px; left: 0px; font-family: Consolas, &quot;Courier New&quot;, monospace; font-weight: normal; font-size: 14px; line-height: 19px; letter-spacing: 0px; display: block; visibility: hidden; width: 2px;"></div></div></div><div role="presentation" aria-hidden="true" class="invisible scrollbar horizontal" style="position: absolute; width: 346px; height: 10px; left: 0px; bottom: 0px;"><div class="slider" style="position: absolute; top: 0px; left: 0px; height: 10px; will-change: transform; width: 346px;"></div></div><canvas class="decorationsOverviewRuler" aria-hidden="true" width="21" height="205" style="position: absolute; will-change: transform; top: 0px; right: 0px; width: 14px; height: 137px;"></canvas><div role="presentation" aria-hidden="true" class="invisible scrollbar vertical" style="position: absolute; width: 14px; height: 137px; right: 0px; top: 0px;"><div class="slider" style="position: absolute; top: 0px; left: 0px; width: 14px; will-change: transform; height: 137px;"></div></div></div><div role="presentation" aria-hidden="true" style="width: 424px;"></div><textarea data-mprt="6" class="inputarea" wrap="off" autocorrect="off" autocapitalize="off" autocomplete="off" spellcheck="false" aria-label="Editor content;Press Alt+F1 for Accessibility Options." role="textbox" aria-multiline="true" aria-haspopup="false" aria-autocomplete="both" style="font-size: 1px; line-height: 19px; top: 0px; left: 64px; width: 1px; height: 1px;"></textarea><div style="position: absolute; top: 0px; left: 0px; width: 0px; height: 0px;"></div><div data-mprt="4" class="overlayWidgets" style="width: 424px;"><div class="accessibilityHelpWidget" role="dialog" aria-hidden="true" widgetid="editor.contrib.accessibilityHelpWidget" style="display: none; position: absolute;"><div role="document"></div></div></div><div data-mprt="8" class="minimap slider-mouseover" role="presentation" aria-hidden="true" style="position: absolute; left: 0px; width: 0px; height: 137px;"><div class="minimap-shadow-hidden" style="height: 137px;"></div><canvas width="1" height="205" style="position: absolute; left: 0px; width: 0.666667px; height: 136.667px;"></canvas><div class="minimap-slider" style="position: absolute; will-change: transform; width: 0px;"><div class="minimap-slider-horizontal" style="position: absolute; width: 0px; height: 0px;"></div></div></div></div><div data-mprt="2" class="overflowingContentWidgets"><div class="editor-widget suggest-widget" widgetid="editor.widget.suggestWidget" style="position: absolute; visibility: inherit; max-width: 848px; top: 19px; left: -27px;" monaco-visible-content-widget="true"><div class="message" aria-hidden="true" style="display: none; background-color: rgb(243, 243, 243); border-color: rgb(200, 200, 200);"></div><div class="tree" aria-hidden="true" style="display: none; background-color: rgb(243, 243, 243); border-color: rgb(200, 200, 200);"><div class="monaco-list list_id_3" tabindex="0" role="tree"><div class="monaco-scrollable-element " role="presentation" style="position: relative; overflow: hidden;"><div class="monaco-list-rows" style="overflow: hidden;"></div><div role="presentation" aria-hidden="true" class="invisible scrollbar horizontal" style="position: absolute;"><div class="slider" style="position: absolute; top: 0px; left: 0px; height: 10px; will-change: transform;"></div></div><div role="presentation" aria-hidden="true" class="invisible scrollbar vertical" style="position: absolute;"><div class="slider" style="position: absolute; top: 0px; left: 0px; width: 10px; will-change: transform;"></div></div></div><style type="text/css" media="screen">.monaco-list.list_id_3:focus .monaco-list-row.focused { background-color: #d6ebff; }
+.monaco-list.list_id_3:focus .monaco-list-row.focused:hover { background-color: #d6ebff; }
+.monaco-list.list_id_3:focus .monaco-list-row.selected { background-color: #0069d1; }
+.monaco-list.list_id_3:focus .monaco-list-row.selected:hover { background-color: #0069d1; }
+.monaco-list.list_id_3:focus .monaco-list-row.selected { color: #ffffff; }
+
+				.monaco-drag-image,
+				.monaco-list.list_id_3:focus .monaco-list-row.selected.focused { background-color: #0074e8; }
+			
+
+				.monaco-drag-image,
+				.monaco-list.list_id_3:focus .monaco-list-row.selected.focused { color: #ffffff; }
+			
+.monaco-list.list_id_3 .monaco-list-row.focused { background-color:  #d6ebff; }
+.monaco-list.list_id_3 .monaco-list-row.focused:hover { background-color:  #d6ebff; }
+.monaco-list.list_id_3 .monaco-list-row.selected { background-color:  #e4e6f1; }
+.monaco-list.list_id_3 .monaco-list-row.selected:hover { background-color:  #e4e6f1; }
+.monaco-list.list_id_3:not(.drop-target) .monaco-list-row:hover:not(.selected):not(.focused) { background-color:  #f0f0f0; }
+
+				.monaco-list.list_id_3.drop-target,
+				.monaco-list.list_id_3 .monaco-list-row.drop-target { background-color: #d6ebff !important; color: inherit !important; }
+			
+.monaco-list-type-filter { background-color: #efc1ad }
+.monaco-list-type-filter { border: 1px solid rgba(0, 0, 0, 0); }
+.monaco-list-type-filter.no-matches { border: 1px solid #be1100; }
+.monaco-list-type-filter { box-shadow: 1px 1px 1px #a8a8a8; }</style></div></div><div class="details" aria-hidden="true" style="font-size: 14px; font-weight: normal; display: none; background-color: rgb(243, 243, 243); border-color: rgb(200, 200, 200);"><div class="monaco-scrollable-element " role="presentation" style="position: relative; overflow: hidden;"><div class="body" style="overflow: hidden;"><div class="header"><span class="close" title="Read less... (Ctrl+Space)" style="height: 19px; width: 19px;"></span><p class="type" style="font-family: Consolas, &quot;Courier New&quot;, monospace;"></p></div><p class="docs"></p></div><div role="presentation" aria-hidden="true" class="invisible scrollbar horizontal" style="position: absolute;"><div class="slider" style="position: absolute; top: 0px; left: 0px; height: 10px; will-change: transform;"></div></div><div role="presentation" aria-hidden="true" class="invisible scrollbar vertical" style="position: absolute;"><div class="slider" style="position: absolute; top: 0px; left: 0px; width: 10px; will-change: transform;"></div></div><div class="shadow"></div><div class="shadow"></div><div class="shadow top-left-corner"></div></div></div></div></div><div class="context-view" aria-hidden="true" style="display: none;"></div></div></div></div></div></div></div></div>
+<script src="https://cdn.luogu.com.cn/js/jquery-2.1.1.min.js"></script>
+<script src="//cdn.luogu.com.cn/ide/luogu-ide.min.js?ver=20200320-1"></script>
+<script>
+    var storage = window.localStorage;
+    var ide = createIDE('#ide');
+    var ws = null, resolveCurrentPromise = null;
+    var joinedChannelID = null;
+
+    ide.setLanguages([
+        { value: 1, label: 'Pascal', highlight: 'plaintext' },
+        { value: 2, label: 'C', highlight: 'cpp' },
+        { value: 3, label: 'C++', highlight: 'cpp' },
+        { value: 4, label: 'C++11', highlight: 'cpp' },
+        { value: 11, label: 'C++14', highlight: 'cpp' },
+        { value: 12, label: 'C++17', highlight: 'cpp' },
+        { value: 6, label: 'Python 2', highlight: 'python' },
+        { value: 7, label: 'Python 3', highlight: 'python' },
+        { value: 24, label: 'PyPy 2', highlight: 'python' },
+        { value: 25, label: 'PyPy 3', highlight: 'python' },
+        { value: 8, label: 'Java 8', highlight: 'java' },
+        { value: 9, label: 'Node.js', highlight: 'javascript' },
+        { value: 13, label: 'Ruby', highlight: 'ruby' },
+        { value: 14, label: 'Go', highlight: 'go' },
+        { value: 15, label: 'Rust', highlight: 'rust' },
+        { value: 16, label: 'PHP 7', highlight: 'php' },
+        { value: 17, label: 'C# Mono', highlight: 'csharp' },
+        { value: 18, label: 'Visual Basic Mono', highlight: 'vb' },
+        { value: 19, label: 'Haskell', highlight: 'plaintext' },
+        { value: 20, label: 'Kotlin/Native', highlight: 'plaintext' },
+        { value: 21, label: 'Kotlin/JVM', highlight: 'plaintext' },
+        { value: 22, label: 'Scala', highlight: 'plaintext' },
+        { value: 23, label: 'Perl', highlight: 'perl' },
+        { value: 26, label: '文言', highlight: 'plain_text' }
+    ]);
+
+    // TODO: Implement autosave in IDE.
+    if (storage.getItem('ide-code') !== null) ide.setCode(storage.getItem('ide-code'));
+    if (storage.getItem('ide-language') !== null)
+        ide.setCurrentLanguage(parseInt(storage.getItem('ide-language')));
+    else
+        ide.setCurrentLanguage(4);
+
+    var saveInterval = setInterval(function () {
+        var code = ide.getCode(), lang = ide.getCurrentLanguage();
+        storage.setItem('ide-code', code);
+        storage.setItem('ide-language', lang);
+    }, 2500);
+
+    function run() {
+        var code = ide.getCode(), lang = ide.getCurrentLanguage(), input = ide.getInput(), o2 = ide.isO2Enabled();
+
+        var promise = new Promise(function(resolve) {
+            resolveCurrentPromise = resolve;
+        });
+
+        $.post("/api/ide_submit", {
+            code: code,
+            lang: lang,
+            input: input,
+            o2: o2 ? "true" : "",
+            'csrf-token': $('meta[name=csrf-token]').attr('content')
+        }, function (resp) {
+            if (resp.status === 200) connectWs(resp.data.rid);
+            else {
+                ide.setRunInfo(resp.data);
+                resolveCurrentPromise();
+            }
+        });
+
+        return promise;
+    }
+    ide.setRunHandler(run);
+
+    function connectWs(id) {
+        function joinChannel(rid) {
+            rid = '' + rid;
+            if (joinedChannelID !== null)
+                ws.send(JSON.stringify({
+                    "type": "disconnect_channel",
+                    "channel": "ide.track",
+                    "channel_param": joinedChannelID
+                }));
+            ws.send(JSON.stringify({
+                "type": "join_channel",
+                "channel": "ide.track",
+                "channel_param": rid
+            }));
+            joinedChannelID = rid;
+        }
+
+        if (ws !== null) {
+            if (id)
+                joinChannel(id);
+            return;
+        }
+
+        try {
+            ws = new WebSocket('wss://ws.luogu.com.cn/ws');
+        } catch (e) {
+            alert("错误", "无法连接追踪服务器，请稍后重试。");
+            return;
+        }
+        ws.onopen = function () {
+            if (id)
+                joinChannel(id);
+        };
+        ws.onmessage = function (event) {
+            data = JSON.parse(event.data);
+            if (data._ws_type === "server_broadcast") {
+                var result = getResult(data);
+                if (result) {
+                    ide.setRunInfo(result.label);
+                    ide.setOutput(result.output);
+                    resolveCurrentPromise()
+                }
+            }
+        };
+    }
+
+    connectWs();
+
+    function getResult(data) {
+        var label = null, output = null;
+        if (data.type === "compile") {
+            if (!data.success) {
+                output = data.desc;
+                label = '编译失败';
+            }
+        } else if (data.type === "execute") {
+            output = data.output;
+            switch (data.execute.error) {
+                case null:
+                    label = '运行成功 '
+                        + data.execute.real_time + 'ms ' + data.execute.memory + 'kb';
+                    break;
+                case 'Runtime Error':
+                    label = '运行时错误';
+                    break;
+                case 'Time Limit Exceeded':
+                    label = '超过时间限制';
+                    break;
+                case 'Memory Limit Exceeded':
+                    label = '超出内存限制';
+                    break;
+                case 'Output Limit Exceeded':
+                    label = '超出输出限制';
+                    break;
+            }
+        }
+
+        return label ? {label: label, output: output} : null;
+    }
+</script><div class="monaco-aria-container"><div class="monaco-alert" role="alert" aria-atomic="true"></div><div class="monaco-status" role="status" aria-atomic="true"></div></div>
+
 
 </body></html>
