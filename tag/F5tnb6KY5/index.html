@@ -6,17 +6,17 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 <meta name="keywords" content="&lt;meta name=&#34;keywords&#34; content=&#34;charlie520&#34;/&gt;">
-<meta name="description" content="I AK IOI">
+<meta name="description" content="初来乍到，请多关照">
 <meta name="theme-color" content="#000">
-<title>charlieのblog</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1595591120246">
+<title>charlie520&#39;s Blog</title>
+<link rel="shortcut icon" href="/favicon.ico?v=1596098022988">
 <link rel="stylesheet" href="/media/css/gemini.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
 <link
   href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Rosario:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext"
   rel="stylesheet" type="text/css">
 
-<link href="/media/hljs/styles/monokai-sublime.css"
+<link href="/media/hljs/styles/Vs.css"
   rel="stylesheet">
 
 <link rel="stylesheet" href="/styles/main.css">
@@ -28,11 +28,25 @@
   integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
 
 
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"
-  integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js"
-  integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
-  onload="renderMathInElement(document.body);"></script>
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ["\\(", "\\)"]],
+      displayMath: [['$$', '$$'], ["\\[", "\\]"]]
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code', 'a', 'annotation', 'annotation-xml'],
+      ignoreHtmlClass: 'tex2jax_ignore|crayon-.*', // 'crayon-' 开头的类，属于Wordpress代码高亮库，这部分不需要处理，否则会导致显示不正确,这部分是正则式，多条之间用'|'分割
+      processHtmlClass: 'tex2jax_process'
+    },
+    //禁用右键菜单	
+    renderActions: {
+      addMenu: [0, '', '']
+    }
+  };
+</script>
+<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
 
 
@@ -58,12 +72,12 @@
         <div class="site-title">
           
             <a href="/" class="brand">
-              <span>charlieのblog</span>
+              <span>charlie520&#39;s Blog</span>
             </a>  
           
         </div>
         
-          <p class="subtitle">先思而后码</p>
+          <p class="subtitle">初来乍到，请多关照</p>
         
       </div>
       <nav class="site-nav" id="site_nav">
@@ -77,7 +91,7 @@
               
               
                 <a href="/" target="_self">
-                  <i class="fa fa-home"></i> 首页
+                  <i class="fa fa-home"></i> Home Page
                 </a>
               
             </li>
@@ -90,7 +104,7 @@
               
               
                 <a href="/archives/" target="_self">
-                  <i class="fa fa-archive"></i> 归档
+                  <i class="fa fa-archive"></i> Archives
                 </a>
               
             </li>
@@ -103,7 +117,7 @@
               
               
                 <a href="/tags/" target="_self">
-                  <i class="fa fa-tags"></i> 标签
+                  <i class="fa fa-tags"></i> Tags
                 </a>
               
             </li>
@@ -116,7 +130,20 @@
               
               
                 <a href="/post/about/" target="_self">
-                  <i class="fa fa-user"></i> 关于
+                  <i class="fa fa-user"></i> About
+                </a>
+              
+            </li>
+          
+            
+            
+              
+            
+            <li class="nav-item ">
+              
+              
+                <a href="https://www.luogu.com.cn/blog/56822//" target="_blank">
+                  <i class="fa fa-globe"></i> Luogu Blog
                 </a>
               
             </li>
@@ -177,11 +204,11 @@
 <div class="sidebar-wrapper box-shadow-wrapper bg-color">
   <div class="sidebar-item">
     <img class="site-author-image right-motion" src="/images/avatar.png"/>
-    <p class="site-author-name">SQ</p>
+    <p class="site-author-name">charlie520</p>
     
     <div class="site-description right-motion">
       
-        <p id="binft">欢迎来到BLOG！</p>
+        <p id="binft">初来乍到，请多关照</p>
       
     </div>
     
@@ -190,7 +217,7 @@
     <div class="sidebar-item-box">
       <a href="/archives/">
         
-        <span class="site-item-stat-count">2</span>
+        <span class="site-item-stat-count">1</span>
         <span class="site-item-stat-name language" data-lan="article">文章</span>
       </a>
     </div>
@@ -267,10 +294,6 @@
       
       
       
-      
-      
-      
-      
       <a href="https://charlie520web.github.io/post/ti-jie-p1175-biao-da-shi-de-zhuan-huan/">
         <div class="motion-warpper">
           <div class="tag-post-node">
@@ -303,10 +326,6 @@
       
       
       
-      
-      
-      
-      
     </div>
   </div>
 </div>
@@ -321,7 +340,7 @@
         href="https://github.com/hsxyhao/gridea-theme-next" target="_blank">HsxyHao</a>
     </div>
     <div class="poweredby">
-      BY charlie520
+      Charlie520
     </div>
   </footer>
   
@@ -514,33 +533,6 @@
       <hr>
     </div>
     <div class="result" id="result">
-      
-      <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://charlie520web.github.io/post/harry-potter-quiz/"" data-c="
-          &lt;p&gt;待补充……&lt;/p&gt;
-">Harry Potter Quiz</a>
-      </div>
-      
-      <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://charlie520web.github.io/post/dollardollarhugeboldmarkdown~yu-~katex~shi-yong-gong-lue-dollardollar/"" data-c="
-          &lt;p class=&#39;katex-block&#39;&gt;&lt;span class=&#34;katex-display&#34;&gt;&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mstyle mathsize=&#34;2.488em&#34;&gt;&lt;mrow&gt;&lt;mi mathvariant=&#34;bold&#34;&gt;M&lt;/mi&gt;&lt;mi mathvariant=&#34;bold&#34;&gt;a&lt;/mi&gt;&lt;mi mathvariant=&#34;bold&#34;&gt;r&lt;/mi&gt;&lt;mi mathvariant=&#34;bold&#34;&gt;k&lt;/mi&gt;&lt;mi mathvariant=&#34;bold&#34;&gt;d&lt;/mi&gt;&lt;mi mathvariant=&#34;bold&#34;&gt;o&lt;/mi&gt;&lt;mi mathvariant=&#34;bold&#34;&gt;w&lt;/mi&gt;&lt;mi mathvariant=&#34;bold&#34;&gt;n&lt;/mi&gt;&lt;/mrow&gt;&lt;mtext&gt; &lt;/mtext&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;与&lt;/mi&gt;&lt;mtext&gt; KaTeX &lt;/mtext&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;食&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;用&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;攻&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;略&lt;/mi&gt;&lt;/mstyle&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;\Huge\bold{Markdown}~与 ~\KaTeX~食用攻略
-&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:2.26393072em;vertical-align:-0.536164em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord sizing reset-size6 size11&#34;&gt;&lt;span class=&#34;mord mathbf&#34;&gt;M&lt;/span&gt;&lt;span class=&#34;mord mathbf&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;mord mathbf&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;mord mathbf&#34;&gt;k&lt;/span&gt;&lt;span class=&#34;mord mathbf&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;mord mathbf&#34;&gt;o&lt;/span&gt;&lt;span class=&#34;mord mathbf&#34; style=&#34;margin-right:0.01597em;&#34;&gt;w&lt;/span&gt;&lt;span class=&#34;mord mathbf&#34;&gt;n&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mspace nobreak sizing reset-size6 size11&#34;&gt; &lt;/span&gt;&lt;span class=&#34;mord cjk_fallback sizing reset-size6 size11&#34;&gt;与&lt;/span&gt;&lt;span class=&#34;mspace nobreak sizing reset-size6 size11&#34;&gt; &lt;/span&gt;&lt;span class=&#34;mord text sizing reset-size6 size11&#34;&gt;&lt;span class=&#34;mord textrm&#34;&gt;K&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:-0.17em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;vlist-t&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.3972542250803859em;&#34;&gt;&lt;span style=&#34;top:-2.904999em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord text sizing reset-size11 size6&#34;&gt;&lt;span class=&#34;mord textrm sizing reset-size6 size3&#34;&gt;A&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:-0.15em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord text&#34;&gt;&lt;span class=&#34;mord textrm&#34;&gt;T&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:-0.1667em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.05915032154340835em;&#34;&gt;&lt;span style=&#34;top:-2.7845em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord text sizing reset-size11 size6&#34;&gt;&lt;span class=&#34;mord textrm&#34;&gt;E&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.2155em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:-0.125em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord textrm&#34;&gt;X&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mspace nobreak sizing reset-size6 size11&#34;&gt; &lt;/span&gt;&lt;span class=&#34;mord cjk_fallback sizing reset-size6 size11&#34;&gt;食&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback sizing reset-size6 size11&#34;&gt;用&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback sizing reset-size6 size11&#34;&gt;攻&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback sizing reset-size6 size11&#34;&gt;略&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p class=&#39;katex-block&#39;&gt;&lt;span class=&#34;katex-display&#34;&gt;&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mstyle mathsize=&#34;1.728em&#34;&gt;&lt;mi&gt;H&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;w&lt;/mi&gt;&lt;mtext&gt; &lt;/mtext&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mtext&gt; &lt;/mtext&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mtext&gt; &lt;/mtext&gt;&lt;mrow&gt;&lt;mi mathvariant=&#34;bold&#34;&gt;M&lt;/mi&gt;&lt;mi mathvariant=&#34;bold&#34;&gt;a&lt;/mi&gt;&lt;mi mathvariant=&#34;bold&#34;&gt;r&lt;/mi&gt;&lt;mi mathvariant=&#34;bold&#34;&gt;k&lt;/mi&gt;&lt;mi mathvariant=&#34;bold&#34;&gt;d&lt;/mi&gt;&lt;mi mathvariant=&#34;bold&#34;&gt;o&lt;/mi&gt;&lt;mi mathvariant=&#34;bold&#34;&gt;w&lt;/mi&gt;&lt;mi mathvariant=&#34;bold&#34;&gt;n&lt;/mi&gt;&lt;/mrow&gt;&lt;mtext&gt; &lt;/mtext&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;mtext&gt; KaTeX&lt;/mtext&gt;&lt;/mstyle&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;\LARGE How~to~use~\bold{Markdown}~and~\KaTeX
-&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1.57237632em;vertical-align:-0.372384em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault sizing reset-size6 size9&#34; style=&#34;margin-right:0.08125em;&#34;&gt;H&lt;/span&gt;&lt;span class=&#34;mord mathdefault sizing reset-size6 size9&#34;&gt;o&lt;/span&gt;&lt;span class=&#34;mord mathdefault sizing reset-size6 size9&#34; style=&#34;margin-right:0.02691em;&#34;&gt;w&lt;/span&gt;&lt;span class=&#34;mspace nobreak sizing reset-size6 size9&#34;&gt; &lt;/span&gt;&lt;span class=&#34;mord mathdefault sizing reset-size6 size9&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;mord mathdefault sizing reset-size6 size9&#34;&gt;o&lt;/span&gt;&lt;span class=&#34;mspace nobreak sizing reset-size6 size9&#34;&gt; &lt;/span&gt;&lt;span class=&#34;mord mathdefault sizing reset-size6 size9&#34;&gt;u&lt;/span&gt;&lt;span class=&#34;mord mathdefault sizing reset-size6 size9&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;mord mathdefault sizing reset-size6 size9&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mspace nobreak sizing reset-size6 size9&#34;&gt; &lt;/span&gt;&lt;span class=&#34;mord sizing reset-size6 size9&#34;&gt;&lt;span class=&#34;mord mathbf&#34;&gt;M&lt;/span&gt;&lt;span class=&#34;mord mathbf&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;mord mathbf&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;mord mathbf&#34;&gt;k&lt;/span&gt;&lt;span class=&#34;mord mathbf&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;mord mathbf&#34;&gt;o&lt;/span&gt;&lt;span class=&#34;mord mathbf&#34; style=&#34;margin-right:0.01597em;&#34;&gt;w&lt;/span&gt;&lt;span class=&#34;mord mathbf&#34;&gt;n&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mspace nobreak sizing reset-size6 size9&#34;&gt; &lt;/span&gt;&lt;span class=&#34;mord mathdefault sizing reset-size6 size9&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;mord mathdefault sizing reset-size6 size9&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;mord mathdefault sizing reset-size6 size9&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;mspace nobreak sizing reset-size6 size9&#34;&gt; &lt;/span&gt;&lt;span class=&#34;mord text sizing reset-size6 size9&#34;&gt;&lt;span class=&#34;mord textrm&#34;&gt;K&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:-0.17em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;vlist-t&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.4818109212962963em;&#34;&gt;&lt;span style=&#34;top:-2.904999em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord text sizing reset-size9 size6&#34;&gt;&lt;span class=&#34;mord textrm sizing reset-size6 size3&#34;&gt;A&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:-0.15em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord text&#34;&gt;&lt;span class=&#34;mord textrm&#34;&gt;T&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:-0.1667em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.17994560185185185em;&#34;&gt;&lt;span style=&#34;top:-2.7845em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord text sizing reset-size9 size6&#34;&gt;&lt;span class=&#34;mord textrm&#34;&gt;E&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.2155em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:-0.125em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord textrm&#34;&gt;X&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mstyle mathsize=&#34;1.2em&#34;&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;作&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;者&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;：&lt;/mi&gt;&lt;mrow&gt;&lt;mi mathvariant=&#34;fraktur&#34;&gt;C&lt;/mi&gt;&lt;mi mathvariant=&#34;fraktur&#34;&gt;h&lt;/mi&gt;&lt;mi mathvariant=&#34;fraktur&#34;&gt;a&lt;/mi&gt;&lt;mi mathvariant=&#34;fraktur&#34;&gt;r&lt;/mi&gt;&lt;mi mathvariant=&#34;fraktur&#34;&gt;l&lt;/mi&gt;&lt;mi mathvariant=&#34;fraktur&#34;&gt;i&lt;/mi&gt;&lt;mi mathvariant=&#34;fraktur&#34;&gt;e&lt;/mi&gt;&lt;mn mathvariant=&#34;fraktur&#34;&gt;520&lt;/mn&gt;&lt;/mrow&gt;&lt;/mstyle&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;\large 作者：\bold{\frak{Charlie520}}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1.056564em;vertical-align:-0.226872em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback sizing reset-size6 size7&#34;&gt;作&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback sizing reset-size6 size7&#34;&gt;者&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback sizing reset-size6 size7&#34;&gt;：&lt;/span&gt;&lt;span class=&#34;mord sizing reset-size6 size7&#34;&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathfrak&#34;&gt;C&lt;/span&gt;&lt;span class=&#34;mord mathfrak&#34;&gt;h&lt;/span&gt;&lt;span class=&#34;mord mathfrak&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;mord mathfrak&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;mord mathfrak&#34;&gt;l&lt;/span&gt;&lt;span class=&#34;mord mathfrak&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;mord mathfrak&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mord mathfrak&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;mord mathfrak&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;mord mathfrak&#34;&gt;0&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;
-&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mstyle mathsize=&#34;1.2em&#34;&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;为&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;了&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;简&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;短&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;，&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;点&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;击&lt;/mi&gt;&lt;mrow&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;蓝&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;色&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;字&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;体&lt;/mi&gt;&lt;/mrow&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;即&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;可&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;查&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;看&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;该&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;节&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;内&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;容&lt;/mi&gt;&lt;/mstyle&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;\large 为了简短，点击\bold{蓝色字体}即可查看该节内容&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback sizing reset-size6 size7&#34;&gt;为&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback sizing reset-size6 size7&#34;&gt;了&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback sizing reset-size6 size7&#34;&gt;简&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback sizing reset-size6 size7&#34;&gt;短&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback sizing reset-size6 size7&#34;&gt;，&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback sizing reset-size6 size7&#34;&gt;点&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback sizing reset-size6 size7&#34;&gt;击&lt;/span&gt;&lt;span class=&#34;mord sizing reset-size6 size7&#34;&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;蓝&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;色&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;字&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;体&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback sizing reset-size6 size7&#34;&gt;即&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback sizing reset-size6 size7&#34;&gt;可&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback sizing reset-size6 size7&#34;&gt;查&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback sizing reset-size6 size7&#34;&gt;看&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback sizing reset-size6 size7&#34;&gt;该&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback sizing reset-size6 size7&#34;&gt;节&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback sizing reset-size6 size7&#34;&gt;内&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback sizing reset-size6 size7&#34;&gt;容&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;
-&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mstyle mathsize=&#34;1.2em&#34;&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;本&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;攻&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;略&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;适&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;用&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;于&lt;/mi&gt;&lt;mrow&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;洛&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;谷&lt;/mi&gt;&lt;/mrow&gt;&lt;/mstyle&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;\large 本攻略适用于\bold{洛谷}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback sizing reset-size6 size7&#34;&gt;本&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback sizing reset-size6 size7&#34;&gt;攻&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback sizing reset-size6 size7&#34;&gt;略&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback sizing reset-size6 size7&#34;&gt;适&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback sizing reset-size6 size7&#34;&gt;用&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback sizing reset-size6 size7&#34;&gt;于&lt;/span&gt;&lt;span class=&#34;mord sizing reset-size6 size7&#34;&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;洛&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;谷&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&#34;第一章-markdown&#34;&gt;第一章 Markdown&lt;/h2&gt;
-&lt;h3 id=&#34;第一节-标题&#34;&gt;&lt;a href=&#34;/paste/a33bbc2e&#34;&gt;第一节 标题&lt;/a&gt;&lt;/h3&gt;
-&lt;h3 id=&#34;第二节-列表&#34;&gt;&lt;a href=&#34;/paste/cnhy8lra&#34;&gt;第二节 列表&lt;/a&gt;&lt;/h3&gt;
-&lt;h3 id=&#34;第三节-粗体-删除线-斜体-分割线&#34;&gt;&lt;a href=&#34;/paste/839klxce&#34;&gt;第三节 粗体、删除线、斜体、分割线&lt;/a&gt;&lt;/h3&gt;
-&lt;h3 id=&#34;第四节-图片-链接-代码与表格&#34;&gt;&lt;a href=&#34;/paste/7g7hrob8&#34;&gt;第四节 图片、链接、代码与表格&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;第二章 &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mtext&gt;KaTeX&lt;/mtext&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;\KaTeX&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.89883em;vertical-align:-0.2155em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord text&#34;&gt;&lt;span class=&#34;mord textrm&#34;&gt;K&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:-0.17em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;vlist-t&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.68333em;&#34;&gt;&lt;span style=&#34;top:-2.904999em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord text&#34;&gt;&lt;span class=&#34;mord textrm sizing reset-size6 size3&#34;&gt;A&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:-0.15em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord text&#34;&gt;&lt;span class=&#34;mord textrm&#34;&gt;T&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:-0.1667em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.46782999999999997em;&#34;&gt;&lt;span style=&#34;top:-2.7845em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord text&#34;&gt;&lt;span class=&#34;mord textrm&#34;&gt;E&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.2155em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:-0.125em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord textrm&#34;&gt;X&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;未完待续&lt;/p&gt;
-">$$\bold{Markdown}~与 ~\KaTeX~食用攻略$$</a>
-      </div>
       
       <div class="item">
         <a class="result-title" style="opacity: 0;" href="https://charlie520web.github.io/post/ti-jie-p1175-biao-da-shi-de-zhuan-huan/"" data-c="
@@ -902,35 +894,6 @@ int main()
 &lt;/details&gt;
 &lt;p&gt;&lt;strong&gt;请勿复制抄袭！可以借鉴学习！&lt;/strong&gt;&lt;/p&gt;
 ">题解 P1563 【玩具谜题】</a>
-      </div>
-      
-      <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://charlie520web.github.io/post/blog-history/"" data-c="
-          &lt;p&gt;此blog的更新都在这里哦~&lt;/p&gt;
-&lt;!-- more --&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;已更新&#34;&gt;已更新&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;按时间顺序排序&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&#34;2020529&#34;&gt;2020/5/29&lt;/h3&gt;
-&lt;p&gt;创建blog并编写主题。&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;从洛谷 搬运题解 P1563 【玩具谜题】&lt;/code&gt;&lt;/p&gt;
-&lt;h3 id=&#34;2020530&#34;&gt;2020/5/30&lt;/h3&gt;
-&lt;p&gt;&lt;code&gt;从洛谷 搬运题解 P1175 【表达式的转换】&lt;/code&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;计划更新&#34;&gt;计划更新&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;优先级从上到下递减&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ol&gt;
-&lt;li&gt;搬luogu-blog的文章。&lt;/li&gt;
-&lt;li&gt;提供评论功能。&lt;/li&gt;
-&lt;li&gt;内网穿透。（有域名）&lt;/li&gt;
-&lt;li&gt;将看板娘更新为可互动聊天的。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;hr&gt;
-">blog更新日志</a>
       </div>
       
       <div class="item">

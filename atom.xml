@@ -1,41 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://charlie520web.github.io</id>
-    <title>charlieのblog</title>
-    <updated>2020-07-24T11:45:22.108Z</updated>
+    <title>charlie520&apos;s Blog</title>
+    <updated>2020-07-30T08:33:47.360Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://charlie520web.github.io"/>
     <link rel="self" href="https://charlie520web.github.io/atom.xml"/>
-    <subtitle>I AK IOI</subtitle>
+    <subtitle>初来乍到，请多关照</subtitle>
     <logo>https://charlie520web.github.io/images/avatar.png</logo>
     <icon>https://charlie520web.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2020, charlieのblog</rights>
-    <entry>
-        <title type="html"><![CDATA[Harry Potter Quiz]]></title>
-        <id>https://charlie520web.github.io/post/harry-potter-quiz/</id>
-        <link href="https://charlie520web.github.io/post/harry-potter-quiz/">
-        </link>
-        <updated>2020-07-24T11:41:44.000Z</updated>
-        <content type="html"><![CDATA[<p>待补充……</p>
-]]></content>
-    </entry>
+    <rights>All rights reserved 2020, charlie520&apos;s Blog</rights>
     <entry>
         <title type="html"><![CDATA[关于]]></title>
         <id>https://charlie520web.github.io/post/about/</id>
         <link href="https://charlie520web.github.io/post/about/">
         </link>
         <updated>1899-11-29T16:11:26.000Z</updated>
-        <content type="html"><![CDATA[<blockquote>
-<p>欢迎！很高兴遇见您！🤝</p>
-</blockquote>
-<h2 id="关于本blog">🏠 关于本blog</h2>
-<p>这里是我的博客，欢迎点赞！</p>
-<h2 id="博主是谁">👨‍💻 博主是谁</h2>
-<p>SQ</p>
-<h2 id="兴趣爱好">⛹ 兴趣爱好</h2>
-<p>学习！</p>
-<h2 id="联系我呀">📬 联系我呀</h2>
-<p>QQ：3538136822</p>
-]]></content>
     </entry>
 </feed>
