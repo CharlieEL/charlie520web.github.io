@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://charlie520web.github.io</id>
     <title>charlie520&apos;s Blog</title>
-    <updated>2020-07-30T08:33:47.360Z</updated>
+    <updated>2020-07-31T10:53:57.327Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://charlie520web.github.io"/>
     <link rel="self" href="https://charlie520web.github.io/atom.xml"/>
@@ -11,10 +11,34 @@
     <icon>https://charlie520web.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, charlie520&apos;s Blog</rights>
     <entry>
+        <title type="html"><![CDATA[意见箱]]></title>
+        <id>https://charlie520web.github.io/post/yi-jian-xiang/</id>
+        <link href="https://charlie520web.github.io/post/yi-jian-xiang/">
+        </link>
+        <updated>2020-07-31T10:50:54.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[题解 P1563 【玩具谜题】]]></title>
+        <id>https://charlie520web.github.io/post/luogu-solotion-p1563/</id>
+        <link href="https://charlie520web.github.io/post/luogu-solotion-p1563/">
+        </link>
+        <updated>2019-08-07T14:40:37.000Z</updated>
+        <summary type="html"><![CDATA[<p><a href="https://www.luogu.com.cn/problem/P1563">回到题目</a> | <a href="https://www.luogu.com.cn/blog/56822/solution-p1563">在洛谷blog中查看</a></p>
+<blockquote>
+<p><code>本道题目难度</code> <em>较低</em> <code>，主要运用了</code> <em>模拟</em> <code>的算法。</code></p>
+</blockquote>
+]]></summary>
+        <content type="html"><![CDATA[<p><a href="https://www.luogu.com.cn/problem/P1563">回到题目</a> | <a href="https://www.luogu.com.cn/blog/56822/solution-p1563">在洛谷blog中查看</a></p>
+<blockquote>
+<p><code>本道题目难度</code> <em>较低</em> <code>，主要运用了</code> <em>模拟</em> <code>的算法。</code></p>
+</blockquote>
+]]></content>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[关于]]></title>
         <id>https://charlie520web.github.io/post/about/</id>
         <link href="https://charlie520web.github.io/post/about/">
         </link>
-        <updated>1899-11-29T16:11:26.000Z</updated>
+        <updated>1899-11-29T16:17:09.000Z</updated>
     </entry>
 </feed>

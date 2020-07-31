@@ -9,14 +9,14 @@
 <meta name="description" content="初来乍到，请多关照">
 <meta name="theme-color" content="#000">
 <title>charlie520&#39;s Blog</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1596098022988">
-<link rel="stylesheet" href="/media/css/gemini.css">
+<link rel="shortcut icon" href="/favicon.ico?v=1596192790464">
+<link rel="stylesheet" href="/media/css/mist.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
 <link
   href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Rosario:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext"
   rel="stylesheet" type="text/css">
 
-<link href="/media/hljs/styles/Vs.css"
+<link href="/media/hljs/styles/vs2015.css"
   rel="stylesheet">
 
 <link rel="stylesheet" href="/styles/main.css">
@@ -58,9 +58,9 @@
   <div class="head-top-line"></div>
   <div class="header-box">
     
-<div class="gemini">
-  <header class="header  ">
-    <div class="blog-header box-shadow-wrapper bg-color " id="header">
+<div class="mist">
+  <header class="header bg-color ">
+    <div class="blog-header box-shadow-wrapper  " id="header">
       <div class="nav-toggle" id="nav_toggle">
         <div class="toggle-box">
           <div class="line line-top"></div>
@@ -71,13 +71,17 @@
       <div class="site-meta">       
         <div class="site-title">
           
-            <a href="/" class="brand">
-              <span>charlie520&#39;s Blog</span>
+            <a href="/" class="">
+              <span class="logo-line-before">
+                <i class=""></i>
+              </span>
+              <span class="main-title">charlie520&#39;s Blog</span>
+              <span class="logo-line-after">
+                <i class=""></i>
+              </span>
             </a>  
           
         </div>
-        
-          <p class="subtitle">初来乍到，请多关照</p>
         
       </div>
       <nav class="site-nav" id="site_nav">
@@ -197,11 +201,11 @@
   <div class="main-continer">
     
     <div
-      class="section-layout  gemini">
+      class="section-layout bg-color mist">
       <div class="section-layout-wrapper">
         <div id="sidebarMeta" class="sidebar">
     
-<div class="sidebar-wrapper box-shadow-wrapper bg-color">
+<div class="sidebar-wrapper box-shadow-wrapper ">
   <div class="sidebar-item">
     <img class="site-author-image right-motion" src="/images/avatar.png"/>
     <p class="site-author-name">charlie520</p>
@@ -217,32 +221,23 @@
     <div class="sidebar-item-box">
       <a href="/archives/">
         
-        <span class="site-item-stat-count">1</span>
+        <span class="site-item-stat-count">3</span>
         <span class="site-item-stat-name language" data-lan="article">文章</span>
       </a>
     </div>
     <div class="sidebar-item-box">
       <a href="">
-        <span class="site-item-stat-count">1</span>
+        <span class="site-item-stat-count">3</span>
         <span class="site-item-stat-name language" data-lan="category">分类</span>
       </a>
     </div>
     <div class="sidebar-item-box">
       <a href="/tags/">
-        <span class="site-item-stat-count">1</span>
+        <span class="site-item-stat-count">3</span>
         <span class="site-item-stat-name language" data-lan="tag">标签</span>
       </a>
     </div>
   </div>
-  
-    
-      <div class="sidebar-item">
-        <span class="site-item-rss">
-            <i class="fa fa-rss"></i>
-            <a href="https://charlie520web.github.io/atom.xml" target="_blank">RSS</a>
-        </span>
-      </div>
-    
   
   
     <div class="sidebar-item sidebar-item-social">
@@ -264,11 +259,12 @@
   
 
 
+
 </div>
 </div>
 <script>
   let sidebarMeta = document.querySelector('#sidebarMeta');
-  let scheme = 'gemini';
+  let scheme = 'mist';
   let sidebarWrapper = document.querySelector('.sidebar-wrapper');
   if (sidebarMeta && (scheme === 'pisces' || scheme === 'gemini')) {
     document.addEventListener('scroll', function(e) {
@@ -283,17 +279,59 @@
         <div class="section-box box-shadow-wrapper">
           <section class="section tags-section bg-color posts-expand">
             <div class="tags-box">
-  <div class="tag-cloud-title language" data-lan="cloud-tags" data-count="1">
-    目前共计 1 个标签
+  <div class="tag-cloud-title language" data-lan="cloud-tags" data-count="3">
+    目前共计 3 个标签
   </div>
   <div class="tag-cloud-list" id="tags">
     
       
       
         
+      
+        
           
         
       
+        
+          
+            
+      
+        
+          
+        
+      
+      <a class="cloud-tag" href="https://charlie520web.github.io/tag/KqrIWSfVK/" rel="1">luogu</a>
+    
+      
+      
+        
+      
+        
+          
+            
+      
+        
+          
+        
+          
+            
+      
+        
+          
+        
+      
+      <a class="cloud-tag" href="https://charlie520web.github.io/tag/F5tnb6KY5/" rel="2">solotion</a>
+    
+      
+      
+        
+      
+        
+          
+        
+      
+        
+          
         
           
         
@@ -369,17 +407,19 @@
         href="https://github.com/hsxyhao/gridea-theme-next" target="_blank">HsxyHao</a>
     </div>
     <div class="poweredby">
-      Charlie520
+      charlie520
     </div>
   </footer>
   
   
-  <div class="gemini back-to-top" id="back_to_top">
+  <div class="drawer-box left" id="drawer_box">
+    <span class="muse-line muse-line-first"></span>
+    <span class="muse-line muse-line-middle"></span>
+    <span class="muse-line muse-line-last"></span>
+  </div>
+  
+  <div class="mist back-to-top" id="back_to_top">
     <i class="fa fa-arrow-up"></i>
-    
-    <span class="scrollpercent">
-      <span id="back_to_top_text">0</span>%
-    </span>
     
   </div>
   
@@ -532,7 +572,7 @@
   hljs.initHighlightingOnLoad();
   
   // 离开当前页title变化
-  var leaveTitle = '回到charlie520のblog';
+  var leaveTitle = "o(>﹏<)o不要离开我";
   if (leaveTitle) {
     document.addEventListener('visibilitychange', function () {
       if (document.visibilityState == 'hidden') {
@@ -548,7 +588,7 @@
   </div>
 </body>
 
-  <div class="search-mask" id="search_mask" style="display: none;">
+<div class="search-mask" id="search_mask" style="display: none;">
   <div class="search-box">
     <div class="search-title">
       <i class="fa fa-search"></i>
@@ -562,6 +602,14 @@
       <hr>
     </div>
     <div class="result" id="result">
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://charlie520web.github.io/post/yi-jian-xiang/"" data-c="
+          &lt;p&gt;你可以在这里提出您宝贵的意见！😁&lt;br&gt;
+charlie520 会随时查看！🙂&lt;br&gt;
+&lt;code&gt;最后查看时间: 2020-7-31 18:51:51&lt;/code&gt;&lt;/p&gt;
+">意见箱</a>
+      </div>
       
       <div class="item">
         <a class="result-title" style="opacity: 0;" href="https://charlie520web.github.io/post/ti-jie-p1175-biao-da-shi-de-zhuan-huan/"" data-c="
@@ -826,9 +874,8 @@ int main() {
       </div>
       
       <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://charlie520web.github.io/post/ti-jie-p1563-wan-ju-mi-ti/"" data-c="
-          &lt;p&gt;&lt;a href=&#34;https://www.luogu.com.cn/problem/P1563&#34;&gt;回到题目&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.luogu.com.cn/blog/56822/solution-p1563&#34;&gt;在洛谷blog中查看&lt;/a&gt;&lt;/p&gt;
+        <a class="result-title" style="opacity: 0;" href="https://charlie520web.github.io/post/luogu-solotion-p1563/"" data-c="
+          &lt;p&gt;&lt;a href=&#34;https://www.luogu.com.cn/problem/P1563&#34;&gt;回到题目&lt;/a&gt; | &lt;a href=&#34;https://www.luogu.com.cn/blog/56822/solution-p1563&#34;&gt;在洛谷blog中查看&lt;/a&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;code&gt;本道题目难度&lt;/code&gt; &lt;em&gt;较低&lt;/em&gt; &lt;code&gt;，主要运用了&lt;/code&gt; &lt;em&gt;模拟&lt;/em&gt; &lt;code&gt;的算法。&lt;/code&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -842,7 +889,7 @@ int main() {
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;li&gt;模拟（循环n次）
-&lt;ol&gt;
+&lt;ol start=&#34;2&#34;&gt;
 &lt;li&gt;输入第i条指令的方向与名称&lt;/li&gt;
 &lt;li&gt;判断是顺时针或逆时针
 &lt;ol&gt;
@@ -851,7 +898,7 @@ int main() {
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;li&gt;判断序号是否超过限制(大于总人数或小于0)
-&lt;ol&gt;
+&lt;ol start=&#34;2&#34;&gt;
 &lt;li&gt;如果小于0：序号加上总人数&lt;/li&gt;
 &lt;li&gt;否则大于总人数：序号减少总人数&lt;/li&gt;
 &lt;/ol&gt;
@@ -862,7 +909,7 @@ int main() {
 &lt;/ol&gt;
 &lt;h2 id=&#34;伪代码&#34;&gt;伪代码：&lt;/h2&gt;
 &lt;details&gt;
-&lt;summary&gt;&lt;mark&gt;&lt;font color=darkred&gt;点击查看伪代码&lt;/font&gt;&lt;/mark&gt;&lt;/summary&gt;
+&lt;summary&gt;&lt;mark&gt;&lt;font color=black&gt;点击查看伪代码&lt;/font&gt;&lt;/mark&gt;&lt;/summary&gt;
 &lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;cin&amp;gt;&amp;gt;人数&amp;gt;&amp;gt;命令条数;
 for(i = 0;i &amp;lt; 人数 ; i++)
 	cin&amp;gt;&amp;gt;第i个人的朝向与名称;
@@ -886,7 +933,7 @@ return 0;
 依然不懂？&lt;/p&gt;
 &lt;h2 id=&#34;ac代码&#34;&gt;AC代码：&lt;/h2&gt;
 &lt;details&gt;
-&lt;summary&gt;&lt;mark&gt;&lt;font color=darkred&gt;点击查看AC代码&lt;/font&gt;&lt;/mark&gt;&lt;/summary&gt;
+&lt;summary&gt;&lt;mark&gt;&lt;font color=black&gt;点击查看AC代码&lt;/font&gt;&lt;/mark&gt;&lt;/summary&gt;
 &lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include&amp;lt;cstdio&amp;gt;//luoguP1563 
 #include&amp;lt;iostream&amp;gt;
 #include&amp;lt;cstring&amp;gt;
@@ -931,11 +978,11 @@ int main()
 &lt;p&gt;欢迎！很高兴遇见您！🤝&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&#34;关于本blog&#34;&gt;🏠 关于本blog&lt;/h2&gt;
-&lt;p&gt;这里是我的博客，欢迎点赞！&lt;/p&gt;
+&lt;p&gt;这里是我的博客！欢迎！&lt;/p&gt;
 &lt;h2 id=&#34;博主是谁&#34;&gt;👨‍💻 博主是谁&lt;/h2&gt;
-&lt;p&gt;SQ&lt;/p&gt;
+&lt;p&gt;charlie520&lt;/p&gt;
 &lt;h2 id=&#34;兴趣爱好&#34;&gt;⛹ 兴趣爱好&lt;/h2&gt;
-&lt;p&gt;学习！&lt;/p&gt;
+&lt;p&gt;Coding, Study, &lt;s&gt;AK IOI&lt;/s&gt;&lt;/p&gt;
 &lt;h2 id=&#34;联系我呀&#34;&gt;📬 联系我呀&lt;/h2&gt;
 &lt;p&gt;QQ：3538136822&lt;/p&gt;
 ">关于</a>
@@ -1065,6 +1112,28 @@ int main()
 
 <input hidden id="copy" />
 <script>
+  !function () {
+    let times = document.querySelectorAll('.publish-time');
+    for (let i = 0; i < times.length; i++) {
+      let date = times[i].dataset.t;
+      let time = Math.floor((new Date().getTime() - new Date(date).getTime()) / 1000);
+      if (time < 60) {
+        str = time + '秒之前';
+      } else if (time < 3600) {
+        str = Math.floor(time / 60) + '分钟之前';
+      } else if (time >= 3600 && time < 86400) {
+        str = Math.floor(time / 3600) + '小时之前';
+      } else if (time >= 86400 && time < 259200) {
+        str = Math.floor(time / 86400) + '天之前';
+      } else {
+        str = times[i].textContent;
+      }
+      times[i].textContent = str;
+    }
+  }();
+</script>
+
+<script>
   let language = '';
   if (language !== '') {
     let map = new Map();
@@ -1175,7 +1244,6 @@ int main()
       let code = e.currentTarget.querySelector('code');
       var text = code.innerText;
       if (e.srcElement.textContent === '复制成功') {
-        console.log('复制操作频率过高');
         return;
       }
       e.srcElement.textContent = '复制成功';
@@ -1215,6 +1283,8 @@ int main()
 
 
 <script src="/media/js/cool.js"></script>
+
+
 
 
 </html>
