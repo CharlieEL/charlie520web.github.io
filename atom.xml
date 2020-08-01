@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://charlie520web.github.io</id>
     <title>charlie520&apos;s Blog</title>
-    <updated>2020-07-31T10:53:57.327Z</updated>
+    <updated>2020-08-01T01:21:07.814Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://charlie520web.github.io"/>
     <link rel="self" href="https://charlie520web.github.io/atom.xml"/>
@@ -16,6 +16,48 @@
         <link href="https://charlie520web.github.io/post/yi-jian-xiang/">
         </link>
         <updated>2020-07-31T10:50:54.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[题解 CF1223E 【Paint the Tree】]]></title>
+        <id>https://charlie520web.github.io/post/luogu-solotion-CF1223E/</id>
+        <link href="https://charlie520web.github.io/post/luogu-solotion-CF1223E/">
+        </link>
+        <updated>2020-05-30T07:59:41.000Z</updated>
+        <summary type="html"><![CDATA[<p><a href="https://www.luogu.com.cn/problem/CF1223E">回到题目</a> | <a href="https://www.luogu.com.cn/blog/56822/solution-cf1223e">在洛谷blog中查看</a></p>
+<h2 id="题目分析">题目分析</h2>
+<p>首先注意到如果一个颜色分配给的两个点如果不相邻的话，这种颜色就被浪费了。<br>
+我们完全可以给他们涂不一样的颜色。<br>
+所以一个颜色分配给的两个点一定是相邻的。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p><a href="https://www.luogu.com.cn/problem/CF1223E">回到题目</a> | <a href="https://www.luogu.com.cn/blog/56822/solution-cf1223e">在洛谷blog中查看</a></p>
+<h2 id="题目分析">题目分析</h2>
+<p>首先注意到如果一个颜色分配给的两个点如果不相邻的话，这种颜色就被浪费了。<br>
+我们完全可以给他们涂不一样的颜色。<br>
+所以一个颜色分配给的两个点一定是相邻的。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[题解 P1175 【表达式的转换】]]></title>
+        <id>https://charlie520web.github.io/post/luogu-solotion-p1175/</id>
+        <link href="https://charlie520web.github.io/post/luogu-solotion-p1175/">
+        </link>
+        <updated>2020-03-16T08:04:20.000Z</updated>
+        <summary type="html"><![CDATA[<p><a href="https://www.luogu.com.cn/problem/P1175">回到题目</a> | <a href="https://www.luogu.com.cn/blog/56822/solution-p1175">在洛谷blog中查看</a></p>
+<p>本题基本可以分为3步：</p>
+<ul>
+<li>读入中缀表达式</li>
+<li>中缀表达式转换为后缀表达式并输出</li>
+<li>计算后缀表达式并输出过程</li>
+</ul>
+]]></summary>
+        <content type="html"><![CDATA[<p><a href="https://www.luogu.com.cn/problem/P1175">回到题目</a> | <a href="https://www.luogu.com.cn/blog/56822/solution-p1175">在洛谷blog中查看</a></p>
+<p>本题基本可以分为3步：</p>
+<ul>
+<li>读入中缀表达式</li>
+<li>中缀表达式转换为后缀表达式并输出</li>
+<li>计算后缀表达式并输出过程</li>
+</ul>
+]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[题解 P1563 【玩具谜题】]]></title>
@@ -39,6 +81,6 @@
         <id>https://charlie520web.github.io/post/about/</id>
         <link href="https://charlie520web.github.io/post/about/">
         </link>
-        <updated>1899-11-29T16:17:09.000Z</updated>
+        <updated>2017-09-09T16:00:00.000Z</updated>
     </entry>
 </feed>

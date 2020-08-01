@@ -8,7 +8,7 @@
 <meta name="keywords" content="&lt;meta name=&#34;keywords&#34; content=&#34;charlie520&#34;/&gt;">
 <meta name="description" content="初来乍到，请多关照">
 <meta name="theme-color" content="#000">
-<title>意见箱 | charlie520&#39;s Blog</title>
+<title>题解 P1175 【表达式的转换】 | charlie520&#39;s Blog</title>
 <link rel="shortcut icon" href="/favicon.ico?v=1596244861380">
 <link rel="stylesheet" href="/media/css/mist.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
@@ -52,8 +52,8 @@
 
 
 
-  <meta name="description" content="意见箱" />
-  <meta name="keywords" content="" />
+  <meta name="description" content="题解 P1175 【表达式的转换】" />
+  <meta name="keywords" content="luogu,solotion" />
 </head>
 
 <body>
@@ -221,7 +221,8 @@
       <div class="sidebar-body mist" id="sidebar_body">
         
           
-            
+            <div class="post-side-meta" id="post_side_meta">
+              
 <div class="sidebar-wrapper box-shadow-wrapper ">
   <div class="sidebar-item">
     <img class="site-author-image right-motion" src="/images/avatar.png"/>
@@ -278,6 +279,204 @@
 
 
 </div>
+            </div>
+            <div class="post-toc sidebar-body-active" id="post_toc" style="opacity: 1;">
+              <div class="toc-box right-motion">
+  <div class="toc-wrapper auto-number auto"
+    id="toc_wrapper">
+    <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E8%AF%BB%E5%85%A5%E4%B8%AD%E7%BC%80%E8%A1%A8%E8%BE%BE%E5%BC%8F">读入中缀表达式。</a>
+<ul>
+<li><a href="#1-for-scanf">1. for + scanf</a></li>
+<li><a href="#2-whilecin">2. while(cin)</a></li>
+<li><a href="#3-string">3. string!</a></li>
+</ul>
+</li>
+<li><a href="#%E4%B8%AD%E7%BC%80%E8%BD%AC%E5%90%8E%E7%BC%80">中缀转后缀。</a></li>
+<li><a href="#%E8%AE%A1%E7%AE%97%E5%90%8E%E7%BC%80%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%B9%B6%E8%BE%93%E5%87%BA%E8%BF%90%E7%AE%97%E8%BF%87%E7%A8%8B">计算后缀表达式并输出运算过程</a></li>
+<li><a href="#ac-code">AC CODE</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+</div>
+
+<script>
+
+  let lastTop = 0, lList = [], hList = [], postBody, lastIndex = -1;
+  let active = 'active-show', activeClass = 'active-current';
+  let tocWrapper = document.querySelector('#toc_wrapper');
+  let tocContent = tocWrapper.children[0];
+  let autoNumber = tocWrapper && tocWrapper.classList.contains('auto-number');
+
+  function addTocNumber(elem, deep) {
+    if (!elem) {
+      return;
+    }
+    let prop = elem.__proto__;
+
+    if (prop === HTMLUListElement.prototype) {
+      for (let i = 0; i < elem.children.length; i++) {
+        addTocNumber(elem.children[i], deep + (i + 1) + '.');
+      }
+    } else if (prop === HTMLLIElement.prototype) {
+      // 保存li元素
+      if (elem.children[0] && elem.children[0].__proto__ === HTMLAnchorElement.prototype) {
+        lList.push(elem);
+      }
+      for (let i = 0; i < elem.children.length; i++) {
+        let cur = elem.children[i];
+        if (cur.__proto__ === HTMLAnchorElement.prototype) {
+          if (autoNumber) {
+            cur.text = deep + ' ' + cur.text;
+          }
+        } else if (cur.__proto__ === HTMLUListElement.prototype) {
+          addTocNumber(cur, deep);
+        }
+      }
+    }
+  }
+
+  function removeParentActiveClass() {
+    let parents = tocContent.querySelectorAll('.' + active)
+    parents.forEach(function (elem) {
+      elem.classList.remove(active);
+    });
+  }
+
+  function addActiveClass(index) {
+    if (index >= 0 && index < hList.length) {
+      lList[index].classList.add(activeClass);
+    }
+  }
+
+  function removeActiveClass(index) {
+    if (index >= 0 && index < hList.length) {
+      lList[index].classList.remove(activeClass);
+    }
+  }
+
+  function addActiveLiElemment(elem, parent) {
+    if (!elem || elem === parent) {
+      return;
+    } else {
+      if (elem.__proto__ === HTMLLIElement.prototype) {
+        elem.classList.add(active);
+      }
+      addActiveLiElemment(elem.parentElement, parent);
+    }
+  }
+
+  function showToc() {
+    if (tocWrapper) {
+      postBody = document.querySelector('#post_body');
+      for (let i = 0; i < postBody.children.length; i++) {
+        if (postBody.children[i].__proto__ === HTMLHeadingElement.prototype) {
+          hList.push(postBody.children[i]);
+        }
+      }
+      if (tocWrapper.classList.contains('compress')) {
+        tocContent.classList.add('closed');
+      } else if (tocWrapper.classList.contains('no_compress')) {
+        tocContent.classList.add('expanded');
+      } else {
+        if (hList.length > 10) {
+          active = 'active-hidden'
+          tocContent.classList.add('closed');
+        } else {
+          tocContent.classList.add('expanded');
+        }
+      }
+    }
+  }
+
+  (function () {
+    // 处理不是从#一级标题开始目录
+    if (tocContent.children.length === 1 && tocContent.children[0].__proto__ === HTMLLIElement.prototype) {
+      let con = tocContent.children[0].children[0];
+      tocContent.innerHTML = con.innerHTML;
+    }
+    let markdownItTOC = document.querySelector('.markdownIt-TOC');
+    let innerHeight = window.innerHeight;
+    markdownItTOC.style = `max-height: ${innerHeight - 80 > 0 ? innerHeight - 80 : innerHeight}px`
+    addTocNumber(tocContent, '');
+  })();
+
+  document.addEventListener('scroll', function (e) {
+    if (lList.length <= 0) {
+      return;
+    }
+    let scrollTop = document.scrollingElement.scrollTop + 10;
+    let dir;
+
+    if (lastTop - scrollTop > 0) {
+      dir = 'up';
+    } else {
+      dir = 'down';
+    }
+
+    lastTop = scrollTop;
+    if (scrollTop <= 0) {
+      if (lastIndex >= 0 && lastIndex < hList.length) {
+        lList[lastIndex].classList.remove(activeClass);
+      }
+      return;
+    }
+
+    let current = 0, hasFind = false;
+    for (let i = 0; i < hList.length; i++) {
+      if (hList[i].offsetTop > scrollTop) {
+        current = i;
+        hasFind = true;
+        break;
+      }
+    }
+    if (!hasFind && scrollTop > lList[lList.length - 1].offsetTop) {
+      current = hList.length - 1;
+    } else {
+      current--;
+    }
+    if (dir === 'down') {
+      if (current > lastIndex) {
+        addActiveClass(current);
+        removeActiveClass(lastIndex)
+        lastIndex = current;
+        removeParentActiveClass();
+        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
+      }
+    } else {
+      if (current < lastIndex) {
+        addActiveClass(current);
+        removeActiveClass(lastIndex);
+        lastIndex = current;
+        removeParentActiveClass();
+        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
+      }
+    }
+  });
+
+
+  window.addEventListener('load', function () {
+    showToc();
+    document.querySelector('#sidebar').style = 'display: block;';
+    tocWrapper.classList.add('toc-active');
+    setTimeout(function () {
+      if ("createEvent" in document) {
+        let evt = document.createEvent("HTMLEvents");
+        evt.initEvent("scroll", false, true);
+        document.dispatchEvent(evt);
+      }
+      else {
+        document.fireEvent("scroll");
+      }
+    }, 500)
+  })
+
+</script>
+            </div>
           
         
       </div>
@@ -365,8 +564,8 @@
           <div class="section bg-color post post-page">
             <section class="post-header">
   <h1 class="post-title">
-    <a class="post-title-link" href="https://charlie520web.github.io/post/yi-jian-xiang/">
-      意见箱
+    <a class="post-title-link" href="https://charlie520web.github.io/post/luogu-solotion-p1175/">
+      题解 P1175 【表达式的转换】
     </a>
   </h1>
   <div class="post-meta">
@@ -374,23 +573,42 @@
     <span class="meta-item pc-show">
       <i class="fa fa-calendar-o"></i>
       <span class="language" data-lan="publish">发布于</span>
-      <span class="publish-time" data-t="2020-07-31 18:50:54">2020-07-31</span>
+      <span class="publish-time" data-t="2020-03-16 16:04:20">2020-03-16</span>
       <span class="post-meta-divider pc-show">|</span>
     </span>
     
     <span class="meta-item">
+      <i class="fa fa-folder-o"></i>
+      <span class="pc-show language" data-lan="category-in">分类于</span>
+      
+      
+      <a href="https://charlie520web.github.io/tag/KqrIWSfVK/">
+        <span>luogu</span>
+      </a>、
+      
+      
+      
+      <a href="https://charlie520web.github.io/tag/F5tnb6KY5/">
+        <span>solotion</span>
+      </a>
+      
+      
+    </span>
+    <span class="post-meta-divider">|</span>
+    
+    <span class="meta-item">
       <i class="fa fa-clock-o"></i>
-      <span>1<span class="language" data-lan="minute">分钟</span></span>
+      <span>6<span class="language" data-lan="minute">分钟</span></span>
     </span>
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>32<span class="pc-show language" data-lan="words">字数</span></span>
+      <span>1191<span class="pc-show language" data-lan="words">字数</span></span>
     </span>
     
     
     
-    <span id="/post/yi-jian-xiang/" data-flag-title="意见箱" class="meta-item pc-show leancloud_visitors">
+    <span id="/post/luogu-solotion-p1175/" data-flag-title="题解 P1175 【表达式的转换】" class="meta-item pc-show leancloud_visitors">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-eye"></i>
       <span><span class="language" data-lan="view">浏览量</span>：<span class="leancloud-visitors-count"></span></span>
@@ -399,9 +617,244 @@
   </div>
 </section>
             <div class="post-body next-md-body" id="post_body">
-              <p>你可以在这里提出您宝贵的意见！😁<br>
-charlie520 会随时查看！🙂<br>
-<code>最后查看时间: 2020-7-31 18:51:51</code></p>
+              <p><a href="https://www.luogu.com.cn/problem/P1175">回到题目</a> | <a href="https://www.luogu.com.cn/blog/56822/solution-p1175">在洛谷blog中查看</a></p>
+<p>本题基本可以分为3步：</p>
+<ul>
+<li>读入中缀表达式</li>
+<li>中缀表达式转换为后缀表达式并输出</li>
+<li>计算后缀表达式并输出过程</li>
+</ul>
+<!-- more -->
+<h2 id="读入中缀表达式">读入中缀表达式。</h2>
+<p>一般输入字符有三种方法：</p>
+<h3 id="1-for-scanf">1. for + scanf</h3>
+<p>举个例子：</p>
+<pre><code class="language-cpp">for(int i = 0;i &lt; n;i++)
+	scanf(&quot;%c&quot;,x);
+</code></pre>
+<p><strong>显然此题我们不知道n是多少，所以pass。</strong></p>
+<h3 id="2-whilecin">2. while(cin)</h3>
+<p>举个例子：</p>
+<pre><code class="language-cpp">while(cin &gt;&gt; x) {
+	//做一些事情
+}
+</code></pre>
+<p><strong>然而这样太麻烦了，而且只是读入而已，不需要边输入边做事，果断pass。</strong></p>
+<h3 id="3-string">3. string!</h3>
+<p>聪慧的我发现了表达式之间没有空格。<br>
+<s>(大佬早就看见了)</s><br>
+于是，第三种方法脱险而出：string!</p>
+<pre><code class="language-cpp">string s1;
+cin &gt;&gt; s1;
+</code></pre>
+<p>直接输入字符串即可。</p>
+<h2 id="中缀转后缀">中缀转后缀。</h2>
+<p>主要使用的数据结构：<strong>栈</strong><br>
+首先创建一个函数来回复优先级，一共3种情况</p>
+<ul>
+<li>+,-优先级最低，用1表示</li>
+<li>其次是×,/，用2表示</li>
+<li>^优先级最高，用3表示</li>
+</ul>
+<p>代码：</p>
+<pre><code class="language-cpp">int p(char ch) {
+	if(ch == '+' || ch == '-') return 1;
+	if(ch == '*' || ch == '/') return 2;
+	if(ch == '^') return 3;
+	else return 0;//此处可不写，防止报错
+}
+</code></pre>
+<p>表达式的符号共有4种类型：</p>
+<ul>
+<li>数字<br>
+直接放入后缀表达式</li>
+<li>左括号<br>
+直接压入栈</li>
+<li>右括号<br>
+while(栈顶不为左括号) {<br>
+栈顶元素放入后缀表达式；<br>
+弹出栈顶元素；<br>
+}<br>
+弹出栈顶元素；</li>
+<li>为普通运算符（+,-,×,/,^）<br>
+while(栈不空&amp;&amp;栈顶运算符优先级比该运算符优先级高） {<br>
+栈顶元素放入后缀表达式；<br>
+弹出栈顶元素；<br>
+}<br>
+将该运算符压入栈；</li>
+</ul>
+<p>最后将栈内剩下的所有元素放入后缀表达式并弹出<br>
+代码：</p>
+<details>
+<summary><mark><font color=black>点击查看 表达式处理 代码</font></mark></summary>
+<pre><code class="language-cpp">for(int i = 0;i &lt; len;i++) {
+	if(s1[i] &gt;= '0' &amp;&amp; s1[i] &lt;= '9')//数字
+		s2 += s1[i];
+	else if(s1[i] == '(')//左括号
+		st.push('(');
+	else if(s1[i] == ')') {//右括号
+		while(st.top() != '(') {
+			s2 += st.top();
+			st.pop();
+		}
+		st.pop();
+	}
+	else {//普通运算符
+	while(!st.empty() &amp;&amp; p(st.top()) &gt;= p(s1[i])) {
+			s2 += st.top();
+			st.pop();
+		}
+		st.push(s1[i]);
+	}
+}
+while(!st.empty()) {//全部弹出
+	s2 += st.top();
+	st.pop();
+}
+</code></pre>
+</details>
+<p><strong>切记！输出后缀表达式！用空格隔开！</strong></p>
+<pre><code class="language-cpp">int la = s2.length();
+	for(int i = 0;i &lt; la;i++)
+		cout &lt;&lt; s2[i] &lt;&lt; &quot; &quot;;
+	cout &lt;&lt; endl;//末尾一定有换行！
+</code></pre>
+<p>使用la存长度，否则会非常慢！</p>
+<h2 id="计算后缀表达式并输出运算过程">计算后缀表达式并输出运算过程</h2>
+<p>计算后缀表达式也使用：<strong>栈</strong><br>
+一共有两种情况：</p>
+<ul>
+<li>数字<br>
+直接压入栈。（注意要转为int类型哦！）</li>
+<li>运算符<br>
+取出栈顶两元素进行计算，并压入栈中<br>
+首先我们建立一个函数来进行两数的计算<br>
+为+ , - , × , /<br>
+return a （+ , - , × , /） b；<br>
+否则为^,使用(int)pow(a, b);进行计算，需要改int。<br>
+代码：</li>
+</ul>
+<pre><code class="language-cpp">int numans(int a,char c,int b) {
+	if(c == '+') return a + b;
+	if(c == '-') return a - b;
+	if(c == '*') return a * b;
+	if(c == '/') return a / b;
+	if(c == '^') return (int)pow(a, b);
+} 
+</code></pre>
+<p>然后将运算过程输出出来。</p>
+<ul>
+<li>输出所有栈内元素</li>
+<li>输出还未计算的后缀表达式</li>
+</ul>
+<p>代码：</p>
+<details>
+<summary><mark><font color=black>点击查看 运算过程输出 代码</font></mark></summary>
+<pre><code class="language-cpp">for(int i = 0;i &lt; la;i++) {
+		if(s2[i] &gt;= '0' &amp;&amp; s2[i] &lt;= '9') { 
+			st2.push_back(s2[i] - '0');
+		}
+		else {
+			int a, b;
+			a = st2.back();
+			st2.pop_back();
+			b = st2.back();
+			st2.pop_back();
+			st2.push_back(numans(b,s2[i],a));
+			for (list&lt;int&gt;::iterator it = st2.begin(); it != st2.end(); ++it)
+                cout &lt;&lt; *it &lt;&lt; &quot; &quot;;
+            
+            for (int j = i + 1; j &lt; la; j ++)
+                cout &lt;&lt; s2[j] &lt;&lt; &quot; &quot;;
+			cout &lt;&lt; endl;
+		} 
+	} 
+</code></pre>
+</details>
+<p>然后是最<s>难</s>的：</p>
+<pre><code class="language-cpp">return 0;
+}
+</code></pre>
+<p>这样，你就可以AC这道题了！</p>
+<h2 id="ac-code">AC CODE</h2>
+<details>
+<summary><mark><font color=black>点击查看AC代码</font></mark></summary>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+string s1,s2;
+stack&lt;char&gt; st;
+list&lt;int&gt; st2;
+int p(char ch) {
+	if(ch == '+' || ch == '-') return 1;
+	if(ch == '*' || ch == '/') return 2;
+	if(ch == '^') return 3;
+	else return 0;
+}
+int numans(int a,char c,int b) {
+	if(c == '+') return a + b;
+	if(c == '-') return a - b;
+	if(c == '*') return a * b;
+	if(c == '/') return a / b;
+	if(c == '^') return (int)pow(a, b);
+} 
+int main() {
+	cin &gt;&gt; s1;
+	int len = s1.length();
+	for(int i = 0;i &lt; len;i++) {
+		if(s1[i] &gt;= '0' &amp;&amp; s1[i] &lt;= '9')
+			s2 += s1[i];
+		else if(s1[i] == '(')
+			st.push('(');
+		else if(s1[i] == ')') {
+			while(st.top() != '(') {
+				s2 += st.top();
+				st.pop();
+			}
+			st.pop();
+		}
+		else {
+			while(!st.empty() &amp;&amp; p(st.top()) &gt;= p(s1[i])) {
+				s2 += st.top();
+				st.pop();
+			}
+			st.push(s1[i]);
+		}
+	}
+	while(!st.empty()) {
+		s2 += st.top();
+		st.pop();
+	}
+	int la = s2.length();
+	for(int i = 0;i &lt; la;i++)
+		cout &lt;&lt; s2[i] &lt;&lt; &quot; &quot;;
+	cout &lt;&lt; endl;
+	
+	for(int i = 0;i &lt; la;i++) {
+		if(s2[i] &gt;= '0' &amp;&amp; s2[i] &lt;= '9') { 
+			st2.push_back(s2[i] - '0');
+		}
+		else {
+			int a, b;
+			a = st2.back();
+			st2.pop_back();
+			b = st2.back();
+			st2.pop_back();
+			st2.push_back(numans(b,s2[i],a));
+			for (list&lt;int&gt;::iterator it = st2.begin(); it != st2.end(); ++it)
+                cout &lt;&lt; *it &lt;&lt; &quot; &quot;;
+            
+            for (int j = i + 1; j &lt; la; j ++)
+                cout &lt;&lt; s2[j] &lt;&lt; &quot; &quot;;
+			cout &lt;&lt; endl;
+		} 
+	} 
+	return 0;
+}
+
+
+</code></pre>
+</details>
+<p><strong>请勿复制黏贴，可以借鉴学习。</strong></p>
 
             </div>
             
@@ -414,7 +867,7 @@ charlie520 会随时查看！🙂<br>
     </li>
     <li class="post-copyright-link">
       <strong class="language" data-lan="link">本文链接：</strong>
-      <a href="https://charlie520web.github.io/post/yi-jian-xiang/" title="意见箱">https://charlie520web.github.io/post/yi-jian-xiang/</a>
+      <a href="https://charlie520web.github.io/post/luogu-solotion-p1175/" title="题解 P1175 【表达式的转换】">https://charlie520web.github.io/post/luogu-solotion-p1175/</a>
     </li>
     <li class="post-copyright-license">
       <strong class="language" data-lan="copyright">版权声明： </strong>
@@ -423,15 +876,23 @@ charlie520 会随时查看！🙂<br>
   </ul>
   <div class="tags">
     
+      <a href="https://charlie520web.github.io/tag/KqrIWSfVK/"># luogu</a>
+    
+      <a href="https://charlie520web.github.io/tag/F5tnb6KY5/"># solotion</a>
+    
   </div>
   <div class="nav">
     <div class="nav-prev">
       
+        <i class="fa fa-chevron-left"></i>
+        <a class="nav-pc-next" title="题解 CF1223E 【Paint the Tree】" href="https://charlie520web.github.io/post/luogu-solotion-CF1223E/">题解 CF1223E 【Paint the Tree】</a class="nav-pc-next">
+        <a class="nav-mobile-prev" title="题解 CF1223E 【Paint the Tree】" href="https://charlie520web.github.io/post/luogu-solotion-CF1223E/">上一篇</a>
+      
     </div>
     <div class="nav-next">
       
-        <a class="nav-pc-next" title="题解 CF1223E 【Paint the Tree】" href="https://charlie520web.github.io/post/luogu-solotion-CF1223E/">题解 CF1223E 【Paint the Tree】</a>
-        <a class="nav-mobile-next" title="题解 CF1223E 【Paint the Tree】" href="https://charlie520web.github.io/post/luogu-solotion-CF1223E/">下一篇</a>
+        <a class="nav-pc-next" title="题解 P1563 【玩具谜题】" href="https://charlie520web.github.io/post/luogu-solotion-p1563/">题解 P1563 【玩具谜题】</a>
+        <a class="nav-mobile-next" title="题解 P1563 【玩具谜题】" href="https://charlie520web.github.io/post/luogu-solotion-p1563/">下一篇</a>
         <i class="fa fa-chevron-right"></i>
       
     </div>
